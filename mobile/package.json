@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@expo/webpack-config": "^18.1.2",
+    "@react-navigation/drawer": "^6.6.3",
+    "@types/react": "~18.2.14",
+    "expo": "^49.0.6",
+    "react-native-web": "~0.19.6",
+    "typescript": "^5.1.3"
+  }
+}
