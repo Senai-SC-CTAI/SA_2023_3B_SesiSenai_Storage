@@ -4,17 +4,17 @@ import { FontAwesome5 } from '@expo/vector-icons';
 
 const { Screen, Navigator} = createDrawerNavigator();
 
-import { ScreenA } from '../screens/ScreenA';
-import { ScreenB } from '../screens/ScreenB';
-import { ScreenC } from '../screens/ScreenC';
-import { ScreenD } from '../screens/ScreenD';
-import { ScreenF } from '../screens/ScreenF';
-import { ScreenE } from '../screens/ScreenE';
-import { ScreenG } from '../screens/ScreenG';
-import { ScreenH } from '../screens/ScreenH';
-import { ScreenI } from '../screens/ScreenI';
-import { ScreenJ } from '../screens/ScreenJ';
-import { ScreenK } from '../screens/ScreenK';
+import { ScreenA } from '../screens/PastaA/ScreenA';
+import { ScreenB } from '../screens/PastaB/ScreenB';
+import { ScreenC } from '../screens/PastaC/ScreenC';
+import { ScreenD } from '../screens/PastaD/ScreenD';
+import { ScreenF } from '../screens/PastaF/ScreenF';
+import { ScreenE } from '../screens/PastaE/ScreenE';
+import { ScreenG } from '../screens/PastaG/ScreenG';
+import { ScreenH } from '../screens/PastaH/ScreenH';
+import { ScreenI } from '../screens/PastaI/ScreenI';
+import { ScreenJ } from '../screens/PastaJ/ScreenJ';
+import { ScreenK } from '../screens/PastaK/ScreenK';
 
 export function DrawerRoutes(){
     return(
