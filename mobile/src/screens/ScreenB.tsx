@@ -6,9 +6,9 @@ import { useNavigation } from '@react-navigation/native';
 
 export function ScreenB() {
     const navigation = useNavigation();
-  
+    
     function openScreen(){
-        navigation.navigate('screenC', {name: "Esse conteúdo veio da tela B"})
+        navigation.navigate('screenC')
     }
   
     return (

@@ -4,17 +4,17 @@ import { View, StyleSheet, Button} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 
-export function ScreenA() {
+export function ScreenF() {
     const navigation = useNavigation();
   
     function openScreen(){
-        navigation.navigate('screenB')
+        navigation.navigate('screenG')
     }
   
     return (
     <View style={styles.container}>
         <Button
-            title="Ir para Tela B"
+            title="Ir para Tela G"
             onPress={openScreen}
             color="#fff"
         />
@@ -25,7 +25,7 @@ export function ScreenA() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "red",
+        backgroundColor: "purple",
         justifyContent: "center"
     }
 })
