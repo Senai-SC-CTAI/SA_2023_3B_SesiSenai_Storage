@@ -22,17 +22,17 @@ export function StackRoutes(){
             }}*/
         >
             <Screen
-                name='screenA'
+                name='login '
                 options={{
-                    title: 'Tela A',
+                    title: 'Login',
                     headerShown: false
                 }}
                 component={ScreenA}
             />
             <Screen
-                name='screenB'
+                name='register'
                 options={{
-                    title: 'Tela B',
+                    title: 'Register ',
                     headerTitleAlign: 'left',
                     headerStyle: {
                         backgroundColor: 'navy'
@@ -43,9 +43,9 @@ export function StackRoutes(){
             />
 
 <Screen
-                name='screenD'
+                name='sendemail '
                 options={{
-                    title: 'Tela D',
+                    title: 'Sendemail',
                     headerTitleAlign: 'left',
                     headerStyle: {
                         backgroundColor: 'navy'
