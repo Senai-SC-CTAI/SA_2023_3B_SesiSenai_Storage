@@ -1,9 +1,10 @@
 import 'react-native-gesture-handler';
 
-import { Routes } from './src/routes'
+import { Stack } from './src/routes/stack'
+import { StackRoutes } from './src/routes/stack/stack.routes';
 
 export default function App() {
   return (
-    <Routes />
+    <Stack />
   );
 }
