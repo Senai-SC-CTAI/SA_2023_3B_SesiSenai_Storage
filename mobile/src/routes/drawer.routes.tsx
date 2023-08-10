@@ -4,28 +4,27 @@ import { FontAwesome5 } from '@expo/vector-icons';
 
 const { Screen, Navigator} = createDrawerNavigator();
 
-import { Login } from '../screens/Login/login';
-import { Register } from '../screens/Register/register';
-import { Forgetpassword} from '../screens/Forgetpassword/forgetpassword';
-import { Sendemail} from '../screens/Sendemail/sendemail';
-import { Home} from '../screens/Home/home';
-import { Profile } from '../screens/Profile/profile';
-import { Environments  } from '../screens/Environments /environments ';
-import { Environmentsprofile } from '../screens/Environmentsprofile/environmentsprofile';
-import { Product  } from '../screens/Product /product ';
-import { Productdetails  } from '../screens/Productdetails /productdetails ';
-import { Productprofile  } from '../screens/Productprofile /productprofile ';
-
+import { Login } from '../screens/ScreenLogin/Login';   // Screen A
+import { ForgetPassword } from '../screens/ScreenForgetPassword/ForgetPassword';    // Screen B
+import { Home } from '../screens/ScreenHome/Home';  // Screen C
+import { Register } from '../screens/ScreenRegister/Register';  // Screen D
+import { SendEmail } from '../screens/ScreenSEmail/SendEmail';  // Screen E
+import { Profile } from '../screens/ScreenProfile/Profile';   // Screen F
+import { Environments } from '../screens/ScreenEnvironments/Environments';   // Screen G
+import { Environmentsprofile } from '../screens/ScreenEnvironmentsprofile/Environmentsprofile';   // Screen H
+import { product } from '../screens/ScreenProduct/product';   // Screen I
+import { Productdetails } from '../screens/ScreenProductdetails/Productdetails';   // Screen J
+import { productprofile } from '../screens/ScreenProductprofile/productprofile';   // Screen K
 
 export function DrawerRoutes(){
     return(
         <Navigator
         >
             <Screen
-                name='home'
-                component={Login }
+                name='Login'
+                component={Login}
                 options={{
-                    drawerLabel: 'Home',
+                    drawerLabel: 'Login',
                     drawerIcon: () => 
                         <MaterialIcons 
                             name="person" 
@@ -34,19 +33,19 @@ export function DrawerRoutes(){
                 }}
             />
             <Screen
-                name='register'
-                component={Register }
+                name='ForgetPassword'
+                component={ForgetPassword}
                 options={{
-                    drawerLabel: 'Tela B',
+                    drawerLabel: 'ForgetPassword',
                     drawerIcon: () => 
                     <FontAwesome5 name="box" size={24} color="black" />
                 }}
             />
             <Screen
-                name='forgetpassword '
-                component={Forgetpassword }
+                name='Home'
+                component={Home}
                 options={{
-                    drawerLabel: 'Tela C',
+                    drawerLabel: 'Home',
                     drawerIcon: () => 
                     <MaterialIcons 
                     name="location-pin" 
@@ -57,11 +56,11 @@ export function DrawerRoutes(){
 
 
             <Screen
-                name='sendemail '
-                component={Sendemail }
+                name='Register'
+                component={Register}
                 
                 options={{
-                    drawerLabel: 'Tela D',
+                    drawerLabel: 'Register',
                     drawerIcon: () => 
                         <MaterialIcons 
                             name="add" 
@@ -73,10 +72,10 @@ export function DrawerRoutes(){
 
 
                 <Screen
-                name='home '
-                component={Home }
+                name='SendEmail'
+                component={SendEmail}
                 options={{
-                    drawerLabel: 'Tela E',
+                    drawerLabel: 'SendEmail',
                     drawerIcon: () => 
                         <MaterialIcons 
                             name="add" 
@@ -86,10 +85,10 @@ export function DrawerRoutes(){
             />
             
             <Screen
-                name='profile '
-                component={Profile }
+                name='Profile'
+                component={Profile}
                 options={{
-                    drawerLabel: 'Tela F',
+                    drawerLabel: 'Profile',
                     drawerIcon: () => 
                         <MaterialIcons 
                             name="add" 
@@ -100,10 +99,10 @@ export function DrawerRoutes(){
 
 
                <Screen
-                name='environments '
+                name='Environments'
                 component={Environments}
                 options={{
-                    drawerLabel: 'Tela G',
+                    drawerLabel: 'Environments',
                     drawerIcon: () => 
                         <MaterialIcons 
                             name="add" 
@@ -114,10 +113,10 @@ export function DrawerRoutes(){
             
 
                <Screen
-                name='environmentsprofile '
-                component={Environmentsprofile }
+                name='Environmentsprofile'
+                component={Environmentsprofile}
                 options={{
-                    drawerLabel: 'Tela H',
+                    drawerLabel: 'Environmentsprofile',
                     drawerIcon: () => 
                         <MaterialIcons 
                             name="add" 
@@ -128,10 +127,10 @@ export function DrawerRoutes(){
             
 
                <Screen
-                name='product '
-                component={Product}
+                name='product'
+                component={product}
                 options={{
-                    drawerLabel: 'Tela I',
+                    drawerLabel: 'product',
                     drawerIcon: () => 
                         <MaterialIcons 
                             name="add" 
@@ -142,10 +141,10 @@ export function DrawerRoutes(){
             
 
                <Screen
-                name='productdetails '
-                component={Productdetails }
+                name='Productdetails'
+                component={Productdetails}
                 options={{
-                    drawerLabel: 'Tela J',
+                    drawerLabel: 'Productdetails',
                     drawerIcon: () => 
                         <MaterialIcons 
                             name="add" 
@@ -156,10 +155,10 @@ export function DrawerRoutes(){
             
 
                <Screen
-                name='productprofile '
-                component={Productprofile }
+                name='productprofile'
+                component={productprofile}
                 options={{
-                    drawerLabel: 'Tela K',
+                    drawerLabel: 'productprofile',
                     drawerIcon: () => 
                         <MaterialIcons 
                             name="add" 

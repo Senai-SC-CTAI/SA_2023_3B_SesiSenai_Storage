@@ -2,58 +2,139 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const { Screen, Navigator} = createNativeStackNavigator();
 
-import { Login } from '../screens/Login/login';
-import { Register } from '../screens/Register/register';
-import { Forgetpassword} from '../screens/Forgetpassword/forgetpassword';
-import { Sendemail} from '../screens/Sendemail/sendemail';
-import { Home} from '../screens/Home/home';
-import { Profile } from '../screens/Profile/profile';
-import { Environments  } from '../screens/Environments /environments ';
-import { Environmentsprofile } from '../screens/Environmentsprofile/environmentsprofile';
-import { Product  } from '../screens/Product /product ';
-import { Productdetails  } from '../screens/Productdetails /productdetails ';
-import { Productprofile  } from '../screens/Productprofile /productprofile ';
+import { Login } from '../screens/ScreenLogin/Login';
+import { ForgetPassword } from '../screens/ScreenForgetPassword/ForgetPassword';
+import { Home } from '../screens/ScreenHome/Home';
+import { Register } from  '../screens/ScreenRegister/Register';
+import { SendEmail } from  '../screens/ScreenSEmail/SendEmail';
+import { Profile } from  '../screens/ScreenProfile/Profile';
+import { Environments } from '../screens/ScreenEnvironments/Environments';
+import { Environmentsprofile } from  '../screens/ScreenEnvironmentsprofile/Environmentsprofile';
+import { product } from '../screens/ScreenProduct/product';
+import { Productdetails } from '../screens/ScreenProductdetails/Productdetails';
+import { ScreenK } from '../screens/ScreenProductprofile/productprofile';
 
 export function StackRoutes(){
     return(
-        <Navigator
-            /*screenOptions={{
-                headerShown: false
-            }}*/
-        >
             <Screen
-                name='login '
+                name='Login'
                 options={{
                     title: 'Login',
                     headerShown: false
                 }}
-                component={ScreenA}
+                component={Login}
             />
             <Screen
-                name='register'
+                name='ForgetPassword'
                 options={{
-                    title: 'Register ',
+                    title: 'ForgetPasswordB',
                     headerTitleAlign: 'left',
                     headerStyle: {
                         backgroundColor: 'navy'
                     },
                     headerTintColor: '#fff'
                 }}
-                component={ScreenB}
+                component={ForgetPassword}
             />
 
 <Screen
-                name='sendemail '
+                name='Home'
                 options={{
-                    title: 'Sendemail',
+                    title: 'Home',
                     headerTitleAlign: 'left',
                     headerStyle: {
                         backgroundColor: 'navy'
                     },
                     headerTintColor: '#fff'
                 }}
-                component={ScreenD}
+                component={Home}
             />
+
+<Screen
+                name='Register'
+                options={{
+                    title: 'Screen Register',
+                    headerTitleAlign: 'left',
+                    headerStyle: {
+                        backgroundColor: 'navy'
+                    },
+                    headerTintColor: '#fff'
+                }}
+                component={Register}
+            />
+<Screen
+                name='SendEmail'
+                options={{
+                    title: 'SendEmail',
+                    headerTitleAlign: 'left',
+                    headerStyle: {
+                        backgroundColor: 'navy'
+                    },
+                    headerTintColor: '#fff'
+                }}
+                component={SendEmail}
+            />
+<Screen
+                name='Profile'
+                options={{
+                    title: 'Profile',
+                    headerTitleAlign: 'left',
+                    headerStyle: {
+                        backgroundColor: 'navy'
+                    },
+                    headerTintColor: '#fff'
+                }}
+                component={Profile}
+            />
+<Screen
+                name='Environments'
+                options={{
+                    title: 'Environments',
+                    headerTitleAlign: 'left',
+                    headerStyle: {
+                        backgroundColor: 'navy'
+                    },
+                    headerTintColor: '#fff'
+                }}
+                component={Environments}
+            />
+<Screen
+                name='Environmentsprofile'
+                options={{
+                    title: 'Environmentsprofile',
+                    headerTitleAlign: 'left',
+                    headerStyle: {
+                        backgroundColor: 'navy'
+                    },
+                    headerTintColor: '#fff'
+                }}
+                component={Environmentsprofile}
+            />
+<Screen
+                name='product'
+                options={{
+                    title: 'product',
+                    headerTitleAlign: 'left',
+                    headerStyle: {
+                        backgroundColor: 'navy'
+                    },
+                    headerTintColor: '#fff'
+                }}
+                component={product}
+            />
+<Screen
+                name='Productdetails'
+                options={{
+                    title: 'Productdetails',
+                    headerTitleAlign: 'left',
+                    headerStyle: {
+                        backgroundColor: 'navy'
+                    },
+                    headerTintColor: '#fff'
+                }}
+                component={Productdetails}
+            />
+
 
 
 
