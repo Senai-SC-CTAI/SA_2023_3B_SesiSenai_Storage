@@ -4,17 +4,17 @@ import { View, StyleSheet, Button} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 
-export function ScreenJ() {
+export function Productdetails() {
     const navigation = useNavigation();
   
     function openScreen(){
-        navigation.navigate('screenK')
+        navigation.navigate('productprofile')
     }
   
     return (
     <View style={styles.container}>
         <Button
-            title="Ir para Tela K"
+            title="Ir para Product Profile"
             onPress={openScreen}
             color="#fff"
         />

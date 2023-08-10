@@ -4,17 +4,17 @@ import { View, StyleSheet, Button} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 
-export function ScreenA() {
+export function Login() {
     const navigation = useNavigation();
   
     function openScreen(){
-        navigation.navigate('screenB')
+        navigation.navigate('register')
     }
   
     return (
     <View style={styles.container}>
         <Button
-            title="Ir para Tela B"
+            title="Ir para Register"
             onPress={openScreen}
             color="#fff"
         />

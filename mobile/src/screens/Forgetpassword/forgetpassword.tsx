@@ -5,17 +5,17 @@ import { useNavigation } from '@react-navigation/native';
 
 
 
-export function ScreenC() {
+export function Forget password () {
     const navigation = useNavigation();
   
     function openScreen(){
-        navigation.navigate('screenD')
+        navigation.navigate('sendemail')
     }
   
     return (
     <View style={styles.container}>
         <Button
-            title="Ir para Tela D"
+            title="Ir para Send Email"
             onPress={openScreen}
             color="#fff"
         />

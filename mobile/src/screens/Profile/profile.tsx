@@ -4,17 +4,17 @@ import { View, StyleSheet, Button} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 
-export function ScreenF() {
+export function Profile() {
     const navigation = useNavigation();
   
     function openScreen(){
-        navigation.navigate('screenG')
+        navigation.navigate('environments')
     }
   
     return (
     <View style={styles.container}>
         <Button
-            title="Ir para Tela G"
+            title="Ir para Environments"
             onPress={openScreen}
             color="#fff"
         />
