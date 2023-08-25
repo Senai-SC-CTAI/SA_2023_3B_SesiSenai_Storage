@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 // Drawer
 import { DrawerRoutes } from '../drawer/drawer.routes';
@@ -32,6 +32,7 @@ export function StackRoutes() {
         name="Login"
         options={{
           title: "Login",
+          headerShown: false,
         }}
         component={Login}
       />
@@ -39,6 +40,7 @@ export function StackRoutes() {
         name="ForgetPassword"
         options={{
           title: "ForgetPassword",
+          headerShown: false,
           headerTitleAlign: "left",
           headerStyle: {
             backgroundColor: "navy",
@@ -52,6 +54,7 @@ export function StackRoutes() {
         name="Home"
         options={{
           title: "Home",
+          headerShown: false,
           headerTitleAlign: "left",
           headerStyle: {
             backgroundColor: "navy",
@@ -64,12 +67,8 @@ export function StackRoutes() {
       <Screen
         name="Register"
         options={{
+          headerShown: false,
           title: "Screen Register",
-          headerTitleAlign: "left",
-          headerStyle: {
-            backgroundColor: "navy",
-          },
-          headerTintColor: "#fff",
         }}
         component={Register}
       />
@@ -77,11 +76,7 @@ export function StackRoutes() {
         name="SendEmail"
         options={{
           title: "SendEmail",
-          headerTitleAlign: "left",
-          headerStyle: {
-            backgroundColor: "navy",
-          },
-          headerTintColor: "#fff",
+          headerShown: false,
         }}
         component={SendEmail}
       />
@@ -89,11 +84,7 @@ export function StackRoutes() {
         name="Profile"
         options={{
           title: "Profile",
-          headerTitleAlign: "left",
-          headerStyle: {
-            backgroundColor: "navy",
-          },
-          headerTintColor: "#fff",
+          headerShown: false,
         }}
         component={Profile}
       />
@@ -101,11 +92,7 @@ export function StackRoutes() {
         name="Environments"
         options={{
           title: "Environments",
-          headerTitleAlign: "left",
-          headerStyle: {
-            backgroundColor: "navy",
-          },
-          headerTintColor: "#fff",
+          headerShown: false,
         }}
         component={Environments}
       />
@@ -113,6 +100,7 @@ export function StackRoutes() {
         name="Environmentsprofile"
         options={{
           title: "Environmentsprofile",
+          headerShown: false,
           headerTitleAlign: "left",
           headerStyle: {
             backgroundColor: "navy",
@@ -124,6 +112,7 @@ export function StackRoutes() {
       <Screen
         name="product"
         options={{
+          headerShown: false,
           title: "product",
           headerTitleAlign: "left",
           headerStyle: {
@@ -136,6 +125,7 @@ export function StackRoutes() {
       <Screen
         name="Productdetails"
         options={{
+          headerShown: false,
           title: "Productdetails",
           headerTitleAlign: "left",
           headerStyle: {
@@ -149,6 +139,7 @@ export function StackRoutes() {
       <Screen
         name="productprofile"
         options={{
+          headerShown: false,
           title: "productprofile",
           headerTitleAlign: "left",
           headerStyle: {

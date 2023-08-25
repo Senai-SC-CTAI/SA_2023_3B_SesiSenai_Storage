@@ -1,8 +1,9 @@
 import * as React from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity } from 'react-native';
 
 import { useNavigation } from '@react-navigation/native';
 
+import styles from './styles'
 
 export function ForgetPassword() {
 
@@ -14,51 +15,26 @@ export function ForgetPassword() {
     
   
     return (
-    <View style={styles.container}>
-        <Text style={styles.title}>Nova senha</Text>
+      <View style={styles.container}>
+        <Text style={styles.title}>Esqueceu sua senha:</Text>
+        <Text style={styles.subtitle}>Preencha com seu email a baixo para receber uma mensagem com a redefinição da senha</Text>
        
-        <TouchableOpacity style={styles.button} onPress={(Login)}>
-        <Text style={styles.buttonText}>Entrar</Text>
+        <TextInput
+          style={styles.inputs}
+          placeholder="Insira seu Email"
+          placeholderTextColor={"#6A6A6A"}
+        >
+        </TextInput>
+
+   <View style={styles.bts}>
+   <TouchableOpacity style={styles.button} onPress={(Login)}>
+        <Text style={styles.buttonText}>Voltar</Text>
         </TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={(Login)}>
+        <Text style={styles.buttonText}>Enviar email</Text>
+        </TouchableOpacity>
+   </View>
        
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-      display:'flex',
-      backgroundColor: '#f5f5f5',
-    },
-    title: {
-      color: 'blue',
-      fontSize: 24,
-      fontWeight: 'bold',
-      marginBottom: 20,
-      fontFamily:'inter',
-    },
-    texty: {
-      fontSize: 15,
-      marginBottom: 10,
-    },
-    cadastro: {
-      fontSize: 15,
-      marginBottom: 10,
-      color: '#FA321A',
-    },
-    button: {
-      backgroundColor: 'blue',
-      paddingHorizontal: 20,
-      paddingVertical: 10,
-      borderRadius: 5,
-    },
-    buttonText: {
-      color: 'white',
-      fontWeight: 'bold',
-    },
-  })
-  
-  
