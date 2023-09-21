@@ -1,0 +1,17 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f0f5f9; /* Azul bebê claro para o fundo */
+  color: #333; /* Cor do texto principal */
+}
+
+.titulo {
+  font-size: 2em;
+  font-weight: bold;
+  color: #87bdd8; /* Azul bebê mais escuro para o título */
+}
+
+.alunos {
+  font-size: 1.2em;
+  color: #aecfd6; /* Azul bebê mais claro para o texto dos alunos */
+}
