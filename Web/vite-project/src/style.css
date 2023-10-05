@@ -40,3 +40,10 @@ button {
  
 
 }
+
+.texto-preencher {
+  max-width: 450px;
+  color:  rgb(103, 117, 117);
+  font-size: medium;
+  
+}
