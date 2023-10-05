@@ -4,12 +4,19 @@ body {
   align-items: center;
   height: 100vh;
   flex-direction: column;
+  background-color: #70B6E4;
   background-image: url('./assets/Fundo.png'); 
   background-repeat: no-repeat;
+  background-attachment: fixed;
   background-size: 100% auto;
 }
 .container {
   text-align: center;
+  border-radius: 10px;
+  color:#1E4DD9;
+}
+.container-index{
+  text-align: left;
   border-radius: 10px;
   color:#1E4DD9;
 }
@@ -23,7 +30,7 @@ input {
   box-shadow: 2px 2px rgb(75, 75, 75);
   text-align: center;
   border: 1px solid gray; /* Define uma borda cinza com 1 pixel de espessura */
-  max-width: 300px;
+  
   width: 300px;
 }
 
@@ -56,6 +63,8 @@ button {
 .texto-preencher {
   max-width: 450px;
   color:  rgb(103, 117, 117);
-  font-size: medium;
-  
+}
+
+.senha {
+width: 395px;
 }
