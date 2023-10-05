@@ -22,7 +22,9 @@ input {
   background-color: rgb(226, 226, 226);
   box-shadow: 2px 2px rgb(75, 75, 75);
   text-align: center;
-  
+  border: 1px solid gray; /* Define uma borda cinza com 1 pixel de espessura */
+  max-width: 300px;
+  width: 300px;
 }
 
 .email-recover {
@@ -46,6 +48,7 @@ button {
  background-color: rgb(226, 226, 226);
  width: 200px;
  box-shadow: 2px 2px rgb(75, 75, 75);
+ border: 1px solid gray; /* Define uma borda cinza com 1 pixel de espessura */
  
 
 }
