@@ -1,17 +1,42 @@
 body {
-  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  background-image: url('./assets/Fundo.png'); 
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+.container {
   text-align: center;
-  background-color: #f0f5f9; /* Azul bebê claro para o fundo */
-  color: #333; /* Cor do texto principal */
+  border-radius: 10px;
+  color:#1E4DD9;
+}
+input {
+  margin-bottom: 10px;
+  padding: 10px;
+  font-family: 'Courier New', Courier, monospace;
+  border-radius: 5px;
+  color: rgb(103, 117, 117);
+  background-color: rgb(226, 226, 226);
+  box-shadow: 2px 2px rgb(75, 75, 75);
 }
 
-.titulo {
-  font-size: 2em;
-  font-weight: bold;
-  color: #87bdd8; /* Azul bebê mais escuro para o título */
+.button-container button {
+  margin-right: 15px;
 }
 
-.alunos {
-  font-size: 1.2em;
-  color: #aecfd6; /* Azul bebê mais claro para o texto dos alunos */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+ padding: 10px;
+ border-radius: 5px;
+ color: rgb(103, 117, 117);
+ background-color: rgb(226, 226, 226);
+ 
+
 }
