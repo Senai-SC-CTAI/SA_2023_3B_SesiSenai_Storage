@@ -21,8 +21,15 @@ input {
   color: rgb(103, 117, 117);
   background-color: rgb(226, 226, 226);
   box-shadow: 2px 2px rgb(75, 75, 75);
+  text-align: center;
+  
 }
 
+.email-recover {
+  max-width: 300px;
+  width: 300px;
+  
+}
 .button-container button {
   margin-right: 15px;
 }
@@ -37,6 +44,8 @@ button {
  border-radius: 5px;
  color: rgb(103, 117, 117);
  background-color: rgb(226, 226, 226);
+ width: 200px;
+ box-shadow: 2px 2px rgb(75, 75, 75);
  
 
 }
