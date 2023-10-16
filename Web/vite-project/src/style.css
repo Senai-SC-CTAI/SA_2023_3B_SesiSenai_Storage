@@ -68,3 +68,8 @@ button {
 .senha {
 width: 395px;
 }
+
+a {
+  color: rgb(103, 117, 117);
+  text-decoration: none;
+}
