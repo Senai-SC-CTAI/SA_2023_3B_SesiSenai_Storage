@@ -73,3 +73,99 @@ a {
   color: rgb(103, 117, 117);
   text-decoration: none;
 }
+
+
+
+
+/* ........... */
+
+.box-1 { 
+  background-color: #A2C3E2;
+  width: 150px;
+ }
+
+
+.btn {
+  line-height: 50px;
+  height: 50px;
+  text-align: center;
+  width: 150px;
+  cursor: pointer;
+}
+
+/* 
+========================
+      BUTTON ONE
+========================
+*/
+.btn-one {
+  color: rgb(255, 255, 255);
+  transition: all 0.3s;
+  position: relative;
+  max-width: 150px;
+  margin: 10px;
+}
+.btn-one span {
+  transition: all 0.3s;
+}
+.btn-one::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-top-color: rgba(255,255,255,0.5);
+  border-bottom-color: rgba(255,255,255,0.5);
+  transform: scale(0.1, 1);
+}
+.btn-one:hover span {
+  letter-spacing: 2px;
+}
+.btn-one:hover::before {
+  opacity: 1; 
+  transform: scale(1, 1); 
+}
+.btn-one::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.3s;
+  background-color: rgba(0, 56, 139, 0.24);
+}
+.btn-one:hover::after {
+  opacity: 0; 
+  transform: scale(0.1, 1);
+}
+
+.botoes {
+  align-items: center;
+  margin: 12px;
+
+}
+
+.login {
+  margin-left: 200px;
+  margin-top: -59.5px;
+}
+
+
+/* ,,,,,,,,,,,,,,,,,,, */
+
+.logosenai img {
+  width: 20%;
+  text-align: center;
+  margin-left: 520px;
+  padding: 15px;
+}
