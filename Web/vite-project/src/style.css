@@ -22,14 +22,15 @@ body {
 }
 input {
   margin-bottom: 10px;
-  padding: 10px;
+  padding: 12px;
   font-family: 'Courier New', Courier, monospace;
   border-radius: 5px;
   color: rgb(103, 117, 117);
   background-color: rgb(226, 226, 226);
-  box-shadow: 2px 2px rgb(75, 75, 75);
+  
   text-align: center;
-  border: 1px solid gray; /* Define uma borda cinza com 1 pixel de espessura */
+  border: 0.5px solid gray; /* Define uma borda cinza com 1 pixel de espessura */
+  border-radius: 10px;
   
   width: 300px;
 }
@@ -166,6 +167,92 @@ a {
 .logosenai img {
   width: 20%;
   text-align: center;
-  margin-left: 520px;
+  margin-left: 39%;
+  margin-top: 60px;
   padding: 15px;
 }
+
+
+
+
+/* avatar */
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  margin-top: -10%;
+  
+}
+
+
+
+.box{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+ 
+}
+
+.w-100{
+  width: 100%;
+}
+
+.h-100{
+  height: 100%;
+}
+
+.m-2{
+  margin: 12px;
+}
+
+.p-4{
+  padding: 24px;
+}
+
+
+
+#form-form{
+  & .image-upload{
+      position: relative;
+      width: 200px;
+      height: 200px;
+      border: 4px solid darkblue;
+      border-radius: 100%;
+      box-shadow: 2px 3px 12px #00000060;
+      overflow: hidden;
+      margin-bottom: 20px;
+      
+  }
+
+  & .image-upload img{
+      object-fit: cover;
+  }
+
+  & .image-upload i{
+      position: absolute;
+      margin: 0 auto;
+      font-size: 50px;
+      color: rgb(0, 77, 128);
+  }
+
+  & #image-field{
+      position: absolute;
+      margin: 0 auto;
+      width: 100px;
+      height: 100px;
+      opacity: 0;
+      cursor: pointer;
+  }
+}
+
+
+/* forms usuario */
+
+
+.perfilforms {
+  margin-top: 30px;
+}
+
