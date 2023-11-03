@@ -1,44 +1,65 @@
 body {
+  padding: 0;
+  margin: 0;
+  background-color: #a1c2e3;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.mainContainer {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
   background-color: #70B6E4;
   background-image: url('./assets/Fundo.png'); 
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: 100% auto;
-}
-.container {
-  text-align: center;
+  background-size: 105% auto;
   border-radius: 10px;
   color:#1E4DD9;
+  z-index: 2;
+  position: relative
 }
 .mainLogo{
-  width: 10%; 
+  max-width: 8rem; 
   text-align: center;
 }
 .container-index{
   text-align: left;
   border-radius: 10px;
   color:#1E4DD9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-input {
-  margin-bottom: 10px;
+.senha {
   padding: 12px;
-  font-family: 'Courier New', Courier, monospace;
-  border-radius: 5px;
   color: rgb(103, 117, 117);
   background-color: rgb(226, 226, 226);
-  
-  text-align: center;
-  border: 0.5px solid gray; /* Define uma borda cinza com 1 pixel de espessura */
+  text-align: left;
   border-radius: 10px;
-  
-  width: 300px;
+  padding: 0.7rem 1rem;
+  font-size: 17px;
+  margin: 0;
+  margin-bottom: 10px;
+  width: 100%;
+  background-color: rgba(236, 236, 236, 0.699);
+  border: 1px solid #1e4dda;
 }
-
+.senha::placeholder{
+  font-size: 1rem;
+  font-family: 'Courier New', Courier, monospace;
+}
+.container-index p:hover{
+  text-decoration: underline;
+}
+.svgWave{
+  z-index: -1;
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+}
 .email-recover {
   max-width: 300px;
   width: 300px;
@@ -46,24 +67,14 @@ input {
 }
 .button-container button {
   margin-right: 15px;
+  cursor: pointer;
 }
 
-.button-container {
-  display: flex;
-  justify-content: space-between;
+.container-index h3, .container-index a{
+
+  width: 100%;
 }
 
-button {
- padding: 10px;
- border-radius: 5px;
- color: rgb(103, 117, 117);
- background-color: rgb(226, 226, 226);
- width: 200px;
- box-shadow: 2px 2px rgb(75, 75, 75);
- border: 1px solid gray; /* Define uma borda cinza com 1 pixel de espessura */
- 
-
-}
 
 .texto-preencher {
   max-width: 450px;

@@ -1,0 +1,19 @@
+.button {
+    padding: 0.8rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    text-align: center;
+    color: rgb(103, 117, 117);
+    background-color: rgb(226, 226, 226);
+    width: 200px;
+    box-shadow: 2px 2px rgb(75, 75, 75);
+    border: 1px solid gray;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
