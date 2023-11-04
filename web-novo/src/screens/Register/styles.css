@@ -16,4 +16,43 @@
     display: flex;
     justify-content: space-between;
     gap: 1rem;
+    margin: 2rem 0rem 0rem 0rem;
+}
+.flex{
+    display: flex;
+    flex-direction: column;
+}
+
+.register {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    width: 25%;
+    justify-content: center;
+    /* gap: 1rem;  */
+    /* margin: 0rem 0rem; */
+}
+
+.regInput::placeholder {
+    font-size: 0.8rem;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+.regInput {
+    padding: 0.7rem 0.5rem;
+    border-radius: 5px;
+    border: none;
+    width: 98%;
+    background-color: rgba(236, 236, 236, 0.699);
+    /* border: 1px solid #1e4dda; */
+    border: none;
+}
+
+.register span{
+    text-align: left;
+    width: 100%;
+    font-weight: 500;
+    color: #434e59;
+    margin: 1.5rem 0rem 0.1rem 0rem;
 }

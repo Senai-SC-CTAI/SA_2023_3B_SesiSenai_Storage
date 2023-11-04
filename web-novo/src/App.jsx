@@ -20,7 +20,8 @@ export function App() {
           <h3>Senha:</h3>
           <input type="password" className="senha" placeholder="password" /><br />
           <NavLink to="/password">
-            <p>Esqueci minha senha</p></NavLink>
+            <p id='forget'>Esqueci minha senha</p>
+          </NavLink>
 
           <div className="botoes">
 
@@ -35,12 +36,12 @@ export function App() {
             </div>
 
             <div className="login">
-            <NavLink to="/home">
-              <div className="box-1">
-                <div className="btn btn-one">
-                  <span>Login</span>
+              <NavLink to="/home">
+                <div className="box-1">
+                  <div className="btn btn-one">
+                    <span>Login</span>
+                  </div>
                 </div>
-              </div>
               </NavLink>
             </div>
 
@@ -48,7 +49,7 @@ export function App() {
           <br />
         </div>
 
-       <Footer />
+        <Footer />
         <div className="svgWave">
         </div>
       </div>

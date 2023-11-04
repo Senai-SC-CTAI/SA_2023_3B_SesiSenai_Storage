@@ -10,11 +10,12 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #70B6E4;
-  background-image: url('./assets/Fundo.png'); 
+  background-color: #a1c2e3;
+  background-image: url('./assets/wave3.svg');   
+  /* background: linear-gradient(117deg, #D4EAFF 0%, #54A7FB 106.12%); */
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: 105% auto;
+  background-size: 100% auto;
   border-radius: 10px;
   color:#1E4DD9;
   z-index: 2;
@@ -45,10 +46,14 @@ body {
   margin-bottom: 10px;
   width: 100%;
   background-color: rgba(236, 236, 236, 0.699);
-  border: 1px solid #1e4dda;
+  /* border: 1px solid #1e4dda; */
+  border: none;
+}
+#forget{
+  margin: 0rem 0rem 2rem 0rem;
 }
 .senha::placeholder{
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-family: 'Courier New', Courier, monospace;
 }
 .container-index p:hover{
@@ -97,6 +102,7 @@ a {
 
 .box-1 { 
   background-color: #A2C3E2;
+  background-color: #92c3f3;
   width: 150px;
  }
 
@@ -116,6 +122,7 @@ a {
 */
 .btn-one {
   color: rgb(255, 255, 255);
+  color: #ffffff;
   transition: all 0.3s;
   position: relative;
   max-width: 150px;
@@ -158,7 +165,7 @@ a {
   height: 100%;
   z-index: 1;
   transition: all 0.3s;
-  background-color: rgba(0, 56, 139, 0.24);
+  background-color: rgba(0, 56, 139, 0.24); 
 }
 .btn-one:hover::after {
   opacity: 0; 
