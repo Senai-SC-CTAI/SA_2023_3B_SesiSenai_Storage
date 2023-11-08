@@ -8,6 +8,7 @@ import { Register } from './screens/Register'
 import { Product } from './screens/Product'
 import { Profile } from './screens/Profile'
 import { Environments } from './screens/Environments'
+import { Add } from './screens/addproduct'
 
 import './index.css'
 
@@ -45,6 +46,11 @@ const router = createBrowserRouter(
     {
       path: '/profile',
       element: <Profile />
+    },
+
+    {
+      path: '/addproduct',
+      element: <Add/>
     }
   ]
 )

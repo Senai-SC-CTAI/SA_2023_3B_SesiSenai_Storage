@@ -9,6 +9,7 @@ import { faBox } from '@fortawesome/free-solid-svg-icons';
 import MenuIcon from '@mui/icons-material/Menu';
 import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
 import StoreRoundedIcon from '@mui/icons-material/StoreRounded';
+import AddBoxIcon from '@mui/icons-material/AddBox';
 
 // drawer
 import * as React from 'react';
@@ -68,6 +69,17 @@ export function SideBar() {
                 />
                 </div>
             </NavLink>
+
+            
+            <NavLink to="/addproduct">
+                <div className="option">
+                    <AddBoxIcon
+                        fontSize="inherit"
+                    />
+                </div>
+            </NavLink>
+
+
             <NavLink to="/environments">
                 <div className="option">
                     <StoreRoundedIcon
@@ -75,6 +87,8 @@ export function SideBar() {
                     />
                 </div>
             </NavLink>
+
+
             <NavLink to="/">
                 <div className="option">
                     <LogoutRoundedIcon
@@ -82,6 +96,11 @@ export function SideBar() {
                     />
                 </div>
             </NavLink>
+
+
+           
+
+
         </Box>
     );
 
