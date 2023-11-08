@@ -10,6 +10,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
 import StoreRoundedIcon from '@mui/icons-material/StoreRounded';
 import AddBoxIcon from '@mui/icons-material/AddBox';
+import AddBusinessIcon from '@mui/icons-material/AddBusiness';
 
 // drawer
 import * as React from 'react';
@@ -87,6 +88,16 @@ export function SideBar() {
                     />
                 </div>
             </NavLink>
+
+            
+            <NavLink to="/addpenvironment">
+                <div className="option">
+                    <AddBusinessIcon
+                        fontSize="inherit"
+                    />
+                </div>
+            </NavLink>
+
 
 
             <NavLink to="/">

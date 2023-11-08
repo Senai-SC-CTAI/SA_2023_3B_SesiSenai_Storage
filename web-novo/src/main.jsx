@@ -9,6 +9,7 @@ import { Product } from './screens/Product'
 import { Profile } from './screens/Profile'
 import { Environments } from './screens/Environments'
 import { Add } from './screens/addproduct'
+import { Addenvironment } from './screens/addpenvironment'
 
 import './index.css'
 
@@ -51,6 +52,11 @@ const router = createBrowserRouter(
     {
       path: '/addproduct',
       element: <Add/>
+    },
+
+    {
+      path: '/addpenvironment',
+      element: < Addenvironment />
     }
   ]
 )
