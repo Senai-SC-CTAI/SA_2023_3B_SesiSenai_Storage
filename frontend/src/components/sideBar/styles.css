@@ -1,0 +1,42 @@
+.sidebar {
+    width: 1rem;
+    display: flex;
+    padding: 0.8rem;
+}
+
+.option {
+    color: #FFF;
+    padding: 0.5rem;
+    font-size: 1.9rem;
+} 
+.option:hover{
+    color: #4563C4;
+}
+
+.sidebar button {
+    border: none;
+    color: #FFF;
+    cursor: pointer;
+    background: none;
+    height: 100%;
+}
+
+.drawer {
+    width: 6rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    background: #0465b5;
+}
+
+.link {
+    font-size: 5rem;
+}
+
+.link:hover{
+    opacity: 0.5;    
+}
