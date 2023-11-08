@@ -5,27 +5,6 @@ import { NavLink } from 'react-router-dom'
 
 export function App() {
 
-  async function upload(formData) {
-    try {
-      const response = await fetch("https://example.com/profile/avatar", {
-        method: "PUT",
-        body: formData,
-      });
-      const result = await response.json();
-      console.log("Success:", result);
-    } catch (error) {
-      console.error("Error:", error);
-    }
-  }
-  
-  const formData = new FormData();
-  const fileField = document.querySelector('input[type="file"]');
-  
-  formData.append("username", "abc123");
-  formData.append("avatar", fileField.files[0]);
-  
-  upload(formData);
-
   return (
     <>
       <div className="mainContainer">
