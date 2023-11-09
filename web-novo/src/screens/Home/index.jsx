@@ -1,6 +1,9 @@
 import React from 'react';
 import { SideBar } from '../../components/sideBar'
 import Menu from '../../components/Menu'
+import Logo from "../../assets/Group 10.png";   
+ 
+
 import './styles.css';
 
 export function Home() {
@@ -9,9 +12,14 @@ export function Home() {
             <div className="mainContainer home">
                 <SideBar />
                 {/* <Menu /> */}
+
+                
                 <div className="content">
 
-                    <h1 className="bemvindo">Bem vindo</h1>
+                   
+                    <img src={Logo} className='mainLogo' />
+        <h1>Bem Vindo</h1>
+        <span className="texto-preencher">ao Controle de estoque</span>
                 </div>
 
             </div>

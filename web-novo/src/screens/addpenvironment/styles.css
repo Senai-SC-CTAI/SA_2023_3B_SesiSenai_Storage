@@ -5,6 +5,7 @@
     justify-content: center;
     padding-left: 19.0rem;
 
+
 }
 
 ::placeholder {
@@ -43,6 +44,7 @@
     width: 200px;
     box-shadow: 2px 2px rgb(75, 75, 75);
     border: 1px solid gray;
+
 }
 
 .flex {
@@ -75,4 +77,8 @@
     color: #434e59;
     margin: 1.5rem 0rem 0.1rem 0rem;
 
+}
+
+.box-1 {
+    margin: 10px;
 }

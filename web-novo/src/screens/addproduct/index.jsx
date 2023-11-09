@@ -6,6 +6,7 @@ import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 const data = [
   { key: 'Sala 1', name: 'Sala de estar' },
   { key: 'Sala 2', name: 'Sala de jantar' },
+  
   // Outros dados aqui
 ];
 

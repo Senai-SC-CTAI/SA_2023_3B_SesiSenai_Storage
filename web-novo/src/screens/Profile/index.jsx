@@ -74,6 +74,12 @@ export function Profile() {
                             <input type="password" id="senha" name="senha" readOnly className='inputUser' />
                         </div>
                     </form>
+                    
+                        <div className="box-1">
+                                <div className="btn btn-one">
+                                    <span>Editar</span>
+                                </div>
+                            </div>
                 </div>
             </div>
         </div>
