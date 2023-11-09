@@ -7,6 +7,7 @@ export function Product() {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
   const [noResults, setNoResults] = useState(false);
+  const [searchError, setSearchError] = useState('');
 
   const handleSearch = async () => {
     try {
@@ -15,12 +16,25 @@ export function Product() {
 
       if (data.length === 0) {
         setNoResults(true);
+        setSearchError('');
       } else {
         setResults(data);
         setNoResults(false);
+        setSearchError('');
       }
     } catch (error) {
       console.error('Erro ao buscar produtos:', error);
+      setSearchError('Erro ao buscar produtos.');
+    }
+  };
+
+  const handleButtonClick = () => {
+    if (query.trim() !== '') {
+      handleSearch();
+    } else {
+      setSearchError('A consulta de pesquisa está vazia. Por favor, insira um termo de pesquisa.');
+      setNoResults(true);
+      setResults([]);
     }
   };
 
@@ -37,10 +51,12 @@ export function Product() {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
             />
-            <button type="submit" onClick={handleSearch}>
+            <button type="button" onClick={handleButtonClick}>
               <SearchRoundedIcon />
             </button>
           </div>
+
+          {searchError && <p className="error-message">{searchError}</p>}
 
           {noResults ? (
             <p>Nenhum produto encontrado com o nome "{query}".</p>
