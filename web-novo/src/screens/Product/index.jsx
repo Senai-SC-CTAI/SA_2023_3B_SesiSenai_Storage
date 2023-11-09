@@ -62,7 +62,7 @@ export function Product() {
             <p>Nenhum produto encontrado com o nome "{query}".</p>
           ) : (
             <div className="search-results">
-              <h2>Resultados da Pesquisa:</h2>
+            
               <ul>
                 {results.map((result, index) => (
                   <li key={index}>{result.nome}</li>

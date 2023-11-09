@@ -1,8 +1,9 @@
-import { SideBar } from '../../components/sideBar'
-import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
+import React, { useState } from 'react';
 import './styles.css';
+import { SideBar } from '../../components/sideBar';
+import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 
-export function Product() {
+export function Environments() {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
   const [noResults, setNoResults] = useState(false);
@@ -10,7 +11,7 @@ export function Product() {
 
   const handleSearch = async () => {
     try {
-      const response = await fetch(`http://localhost:5173/product`);
+      const response = await fetch(`http://localhost:5173/environment`);
       const data = await response.json();
 
       if (data.length === 0) {
@@ -22,8 +23,8 @@ export function Product() {
         setSearchError('');
       }
     } catch (error) {
-      console.error('Erro ao buscar produtos:', error);
-      setSearchError('Erro ao buscar produtos.');
+      console.error('Erro ao buscar ambientes:', error);
+      setSearchError('Erro ao buscar ambientes.');
     }
   };
 
@@ -42,11 +43,11 @@ export function Product() {
       <div className="mainContainer home">
         <SideBar />
         <div className="prdt">
-          <h1 className="lista">Listagem de Produtos:</h1>
+          <h1 className="lista">Listagem de Ambientes:</h1>
           <div className="search search-bar">
             <input
               type="text"
-              placeholder="Pesquisar por Produtos"
+              placeholder="Pesquisar por Ambientes"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
             />
@@ -61,7 +62,7 @@ export function Product() {
             <p>Nenhum produto encontrado com o nome "{query}".</p>
           ) : (
             <div className="search-results">
-              <h2>Resultados da Pesquisa:</h2>
+            
               <ul>
                 {results.map((result, index) => (
                   <li key={index}>{result.nome}</li>
