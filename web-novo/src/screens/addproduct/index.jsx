@@ -1,25 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './styles.css';
 import { SideBar } from '../../components/sideBar';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
-
-const data = [
-  { key: 'Sala 1', name: 'Sala Fantasma' },
-];
 
 export function Add() {
   const [productName, setProductName] = useState('');
   const [productDate, setProductDate] = useState('');
   const [productStatus, setProductStatus] = useState('');
   const [selectedAmbiente, setSelectedAmbiente] = useState('');
+  const [ambientes, setAmbientes] = useState([]);
+  const [successMessage, setSuccessMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
-  const handleAmbienteSelection = (ambienteKey) => {
-    setSelectedAmbiente(ambienteKey);
-  };
+  useEffect(() => {
+    const fetchAmbientes = async () => {
+      try {
+        const response = await fetch('http://localhost:5173/ambientes');
+        const data = await response.json();
+        setAmbientes(data);
+      } catch (error) {
+        console.error('Erro ao carregar ambientes:', error);
+      }
+    };
+
+    fetchAmbientes();
+  }, []);
 
   const handleAddProduct = async () => {
     try {
-      const response = await fetch('http://localhost:5173/product', {
+      const response = await fetch('http://localhost:5173/products', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -28,19 +37,30 @@ export function Add() {
           nome_produto: productName,
           dat_cadastro: productDate,
           status_produto: productStatus,
-          cod_produto: null, 
-          ambiente: selectedAmbiente, 
+          cod_produto: null, // O código do produto é gerado automaticamente pelo banco de dados
+          ambiente_id: selectedAmbiente,
         }),
       });
 
       if (response.ok) {
-        console.log('Produto adicionado com sucesso!');
+        const data = await response.json();
+        setSuccessMessage('Produto adicionado com sucesso!');
+        setErrorMessage('');
+        console.log('Produto adicionado com sucesso:', data);
+        // Limpar os campos após adicionar o produto, se desejado
+        setProductName('');
+        setProductDate('');
+        setProductStatus('');
+        setSelectedAmbiente('');
       } else {
         const errorData = await response.json();
-        console.error(`Erro ao adicionar produto: ${errorData.message}`);
+        setErrorMessage(`Erro ao adicionar produto: ${errorData.message}`);
+        setSuccessMessage('');
       }
     } catch (error) {
       console.error('Erro ao adicionar produto:', error);
+      setErrorMessage('Erro ao adicionar produto. Por favor, tente novamente mais tarde.');
+      setSuccessMessage('');
     }
   };
 
@@ -77,14 +97,14 @@ export function Add() {
             />
             <span>Ambiente:</span>
             <select
-              onChange={(e) => handleAmbienteSelection(e.target.value)}
+              onChange={(e) => setSelectedAmbiente(e.target.value)}
               value={selectedAmbiente}
               className="regInput"
             >
               <option value="">Selecione o ambiente</option>
-              {data.map((item) => (
-                <option key={item.key} value={item.key}>
-                  {item.name}
+              {ambientes.map((ambiente) => (
+                <option key={ambiente.id} value={ambiente.id}>
+                  {ambiente.nome}
                 </option>
               ))}
             </select>
@@ -94,6 +114,9 @@ export function Add() {
                 <span>Adicionar</span>
               </div>
             </div>
+
+            {successMessage && <p className="success-message">{successMessage}</p>}
+            {errorMessage && <p className="error-message">{errorMessage}</p>}
           </div>
         </div>
       </div>
