@@ -10,13 +10,14 @@ export function Addenvironment() {
 
   const handleAddEnvironment = async () => {
     try {
-      const response = await fetch('http://localhost:5173/environments', {
+      const response = await fetch('http://localhost:5173/environment', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          name: environmentName,
+          nome_salas: environmentName,
+          quant_salas: 0,
         }),
       });
 
