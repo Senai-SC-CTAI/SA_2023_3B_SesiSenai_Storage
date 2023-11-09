@@ -16,12 +16,11 @@ export function Addenvironment() {
           <span> Nome:</span>
           <input type="name" placeholder="Nome" className='regInput' />
         
-
           <div className="box-1">
-                                <div className="btn btn-one">
-                                    <span>Adicionar</span>
-                                </div>
-                            </div>
+            <div className="btn btn-one">
+                <span>Adicionar</span>
+            </div>
+          </div>
 
         </div>
 
