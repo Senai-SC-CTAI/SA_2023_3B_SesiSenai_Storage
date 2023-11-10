@@ -28,6 +28,15 @@ export function Add() {
 
   const handleAddProduct = async () => {
     try {
+      // console.log para verificar se os dados estão corretos antes da solicitação
+      console.log('Dados do Produto a serem enviados:', {
+        nome_produto: productName,
+        dat_cadastro: productDate,
+        status_produto: productStatus,
+        cod_produto: null,
+        ambiente_id: selectedAmbiente,
+      });
+
       const response = await fetch('http://localhost:5173/product', {
         method: 'POST',
         headers: {
@@ -37,10 +46,13 @@ export function Add() {
           nome_produto: productName,
           dat_cadastro: productDate,
           status_produto: productStatus,
-          cod_produto: null, 
+          cod_produto: null,
           ambiente_id: selectedAmbiente,
         }),
       });
+
+      // console.log para verificar a resposta do servidor
+      console.log('Resposta do servidor:', response);
 
       if (response.ok) {
         const data = await response.json();
@@ -57,6 +69,7 @@ export function Add() {
         setSuccessMessage('');
       }
     } catch (error) {
+      // console.log para verificar se há algum erro no bloco catch
       console.error('Erro ao adicionar produto:', error);
       setErrorMessage('Erro ao adicionar produto. Por favor, tente novamente mais tarde.');
       setSuccessMessage('');
