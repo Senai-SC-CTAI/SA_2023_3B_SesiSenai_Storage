@@ -10,7 +10,6 @@ export function Addenvironment() {
 
   const handleAddEnvironment = async () => {
     try {
-      // console.log para verificar se os dados estão corretos antes da solicitação
       console.log('Dados do Ambiente a serem enviados:', {
         nome_salas: environmentName,
         quant_salas: 0,
@@ -27,7 +26,6 @@ export function Addenvironment() {
         }),
       });
 
-      // console.log para verificar a resposta do servidor
       console.log('Resposta do servidor:', response);
 
       if (response.ok) {
@@ -40,7 +38,6 @@ export function Addenvironment() {
         setSuccessMessage('');
       }
     } catch (error) {
-      // console.log para verificar se há algum erro no bloco catch
       console.error('Erro ao adicionar ambiente:', error);
       setErrorMessage('Erro ao adicionar ambiente. Por favor, tente novamente mais tarde.');
       setSuccessMessage('');
