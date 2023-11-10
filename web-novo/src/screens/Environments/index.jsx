@@ -14,6 +14,8 @@ export function Environments() {
       const response = await fetch(`http://localhost:5173/environments`);
       const data = await response.json();
 
+      console.log('Resposta do servidor ao buscar ambientes:', data);
+
       if (data.length === 0) {
         setNoResults(true);
         setSearchError('');
@@ -62,7 +64,6 @@ export function Environments() {
             <p>Nenhum produto encontrado com o nome "{query}".</p>
           ) : (
             <div className="search-results">
-            
               <ul>
                 {results.map((result, index) => (
                   <li key={index}>{result.nome}</li>
