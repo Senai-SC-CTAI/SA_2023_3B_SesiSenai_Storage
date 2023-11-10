@@ -9,12 +9,12 @@ export function Environments() {
     const navigation = useNavigation();
   
     function openScreen(){
-        navigation.navigate('Productdetails');
+        navigation.navigate('Home');
     }
   
     return (
-        <View style={styles.container}>
-       <Text style={styles.title}>Listagem de Ambientes:</Text>
+      <View style={styles.container}>
+      <Text style={styles.title}>Listagem de Ambientes:</Text>
 
         {/* input search */}
       <View style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
@@ -36,7 +36,7 @@ export function Environments() {
       <Text style={styles.props}>Ex: F13</Text>
       </View>
         <TouchableOpacity style={styles.button} onPress={(openScreen)}>
-        <Text style={styles.buttonText}>Atualizar</Text>
+        <Text style={styles.buttonText}>Voltar</Text>
         </TouchableOpacity>
        
     </View>

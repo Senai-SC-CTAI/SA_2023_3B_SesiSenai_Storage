@@ -11,6 +11,9 @@ export function Profile() {
     function openScreen(){
         navigation.navigate('Login')
     }
+    function openScreen2(){
+        navigation.navigate('Home')
+    }
     useFonts({
         Inter_100Thin,
         Inter_700Bold,
@@ -30,10 +33,13 @@ export function Profile() {
         <Text style={styles.props}>Senha:</Text>
         <Text style={styles.props}>Nova senha:</Text>
       </View>
+        <TouchableOpacity style={styles.button} onPress={(openScreen2)}>
+        <Text style={styles.buttonText}>Voltar</Text>
+        </TouchableOpacity>
+
         <TouchableOpacity style={styles.button} onPress={(openScreen)}>
         <Text style={styles.buttonText}>Sair</Text>
         </TouchableOpacity>
-       
     </View>
   );
 }

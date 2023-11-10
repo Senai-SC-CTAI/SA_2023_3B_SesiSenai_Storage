@@ -7,14 +7,16 @@ import styles from './styles'
 
 export function product() {
     const navigation = useNavigation();
-  
+
+
     function back(){
-        navigation.navigate('Productdetails')
+        navigation.navigate('Home')
     }
   
+
     return (
         <View style={styles.container}>
-         <View style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <View style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
         <View style={styles.inputSearchHolder}>
           <TextInput placeholder="Pesquisar por Produtos" style={{ width: '90%', fontStyle: 'italic', color: 'grey' }}></TextInput>
           <Image
