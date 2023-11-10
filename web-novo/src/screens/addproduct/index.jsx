@@ -72,6 +72,10 @@ export function Add() {
       // console.log para verificar se há algum erro no bloco catch
       console.error('Erro ao adicionar produto:', error);
       setErrorMessage('Erro ao adicionar produto. Por favor, tente novamente mais tarde.');
+      setProductName('');
+      setProductDate('');
+      setProductStatus('');
+      setSelectedAmbiente('');
       setSuccessMessage('');
     }
   };
@@ -127,9 +131,13 @@ export function Add() {
               </div>
             </div>
 
-            {successMessage && <p className="success-message">{successMessage}</p>}
+
+          </div>
+          <div className='Mensagens'>{
+            successMessage && <p className="success-message">{successMessage}</p>}
             {errorMessage && <p className="error-message">{errorMessage}</p>}
           </div>
+
         </div>
       </div>
     </>

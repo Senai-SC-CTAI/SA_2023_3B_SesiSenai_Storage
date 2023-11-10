@@ -11,8 +11,7 @@ body {
   justify-content: center;
   height: 100vh;
   background-color: #a1c2e3;
-  background-image: url('./assets/wave3.svg');   
-  /* background: linear-gradient(117deg, #D4EAFF 0%, #54A7FB 106.12%); */
+  background-image: url('./assets/wave3.svg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% auto;

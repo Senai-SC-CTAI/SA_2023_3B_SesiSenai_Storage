@@ -14,7 +14,10 @@
     font-size: 20px;
 }
 
-
+.Mensagens p{
+    position: absolute;
+    margin-left: -9vh;
+}
 
 .lista {
     font-family: cursive;
