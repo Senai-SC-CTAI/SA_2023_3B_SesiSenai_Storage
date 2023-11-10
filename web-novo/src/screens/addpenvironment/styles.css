@@ -1,0 +1,84 @@
+.Centro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-left: 19.0rem;
+
+
+}
+
+::placeholder {
+    color: #0000008a;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+
+
+.lista {
+    font-family: cursive;
+    font-size: 34px;
+    margin-bottom: 35px;
+
+}
+
+.prdt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 25%;
+}
+
+
+.button {
+    padding: 0.8rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    text-align: center;
+    color: rgb(103, 117, 117);
+    background-color: rgb(226, 226, 226);
+    width: 200px;
+    box-shadow: 2px 2px rgb(75, 75, 75);
+    border: 1px solid gray;
+
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.regInput::placeholder {
+    font-size: 0.8rem;
+    font-family: 'Courier New', Courier, monospace;
+
+
+}
+
+.regInput {
+    padding: 1.0rem 0.6rem;
+    border-radius: 5px;
+    border: none;
+    width: 98%;
+    background-color: rgba(236, 236, 236, 0.699);
+    border: none;
+}
+
+.register span {
+    text-align: left;
+    width: 100%;
+    font-weight: 500;
+    color: #434e59;
+    margin: 1.5rem 0rem 0.1rem 0rem;
+
+}
+
+.box-1 {
+    margin: 10px;
+}
