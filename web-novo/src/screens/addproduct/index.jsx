@@ -15,7 +15,7 @@ export function Add() {
   useEffect(() => {
     const fetchAmbientes = async () => {
       try {
-        const response = await fetch('http://localhost:5173/ambientes');
+        const response = await fetch('http://localhost:5173/environments');
         const data = await response.json();
         setAmbientes(data);
       } catch (error) {
@@ -28,7 +28,7 @@ export function Add() {
 
   const handleAddProduct = async () => {
     try {
-      const response = await fetch('http://localhost:5173/products', {
+      const response = await fetch('http://localhost:5173/product', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
