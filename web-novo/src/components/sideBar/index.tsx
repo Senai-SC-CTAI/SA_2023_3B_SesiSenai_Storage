@@ -101,7 +101,7 @@ export function SideBar() {
 
 
             <NavLink to="/">
-                <div className="option">
+                <div className="option" id='quit'>
                     <LogoutRoundedIcon
                         fontSize="inherit"
                     />
