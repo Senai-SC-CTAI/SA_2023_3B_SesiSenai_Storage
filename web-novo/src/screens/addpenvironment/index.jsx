@@ -65,10 +65,12 @@ export function Addenvironment() {
                 <span>Adicionar</span>
               </div>
             </div>
-
-            {successMessage && <p className="success-message">{successMessage}</p>}
+          </div>
+          <div className='Mensagens'>{
+            successMessage && <p className="success-message">{successMessage}</p>}
             {errorMessage && <p className="error-message">{errorMessage}</p>}
           </div>
+
         </div>
       </div>
     </>

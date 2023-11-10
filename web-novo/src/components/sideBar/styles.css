@@ -21,6 +21,12 @@
     height: 100%;
 }
 
+#quit{
+    position: absolute;
+    margin-top: 15vh;
+    margin-left: -3vh;
+}
+
 .drawer {
     width: 6rem;
     height: 100%;
