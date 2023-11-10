@@ -45,7 +45,7 @@ export function DrawerRoutes() {
         component={Home}
         options={{
           drawerLabel: "Home",
-          drawerIcon: () => <MaterialIcons name="home" size={25} color={'blue'} />,
+          drawerIcon: () => <MaterialIcons name="home" size={25} />,
           headerTitleStyle: {
             color: '#002AA0',
           },
@@ -59,7 +59,6 @@ export function DrawerRoutes() {
         options={{
           drawerLabel: "Perfil",
           drawerIcon: () => <MaterialIcons name="person" size={25} />,
-          header: () => <Header />
         }}
       />
 
@@ -69,26 +68,15 @@ export function DrawerRoutes() {
         options={{
           drawerLabel: "Ambientes",
           drawerIcon: () => <MaterialIcons name="location-pin" size={25} />,
-          header: () => <Header />
         }}
       />
-
-      {/* <Screen
-        name="Environmentsprofile"
-        component={Environmentsprofile}
-        options={{
-          drawerLabel: "Environmentsprofile",
-          drawerIcon: () => <MaterialIcons name="add" size={25} />,
-        }}
-      /> */}
 
       <Screen
         name="product"
         component={product}
         options={{
           drawerLabel: "Produtos",
-          drawerIcon: () => <FontAwesome name="archive" size={25} />,
-          header: () => <Header />
+          drawerIcon: () => <FontAwesome name="archive" size={22} />,
         }}
       />
 

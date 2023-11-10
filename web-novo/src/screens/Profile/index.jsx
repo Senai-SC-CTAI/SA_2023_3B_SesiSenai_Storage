@@ -105,11 +105,16 @@ export function Profile() {
           </form>
           {editMode ? (
             <div className="box-1">
+                
               <div className="btn btn-one" onClick={handleSaveClick}>
                 <span>Salvar</span>
               </div>
+
+               <div  className='cancelar'> 
               <div className="btn btn-one" onClick={handleCancelClick}>
+             
                 <span>Cancelar</span>
+                </div>
               </div>
             </div>
           ) : (

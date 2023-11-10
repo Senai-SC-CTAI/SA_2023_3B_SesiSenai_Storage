@@ -67,3 +67,19 @@
     background-color: rgba(236, 236, 236, 0.699);
     border: 1px solid #1e4dda;
 }
+
+
+.cancelar {
+    
+        background-color: #A2C3E2;
+        background-color: #92c3f3;
+        width: 150px;
+        line-height: 50px;
+        height: 50px;
+        text-align: center;
+        width: 150px;
+        cursor: pointer;
+        margin-left: 170px;
+        margin-top: -60px;
+      
+}
