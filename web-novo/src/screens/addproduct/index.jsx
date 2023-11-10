@@ -37,7 +37,7 @@ export function Add() {
           nome_produto: productName,
           dat_cadastro: productDate,
           status_produto: productStatus,
-          cod_produto: null, // O código do produto é gerado automaticamente pelo banco de dados
+          cod_produto: null, 
           ambiente_id: selectedAmbiente,
         }),
       });
@@ -47,7 +47,6 @@ export function Add() {
         setSuccessMessage('Produto adicionado com sucesso!');
         setErrorMessage('');
         console.log('Produto adicionado com sucesso:', data);
-        // Limpar os campos após adicionar o produto, se desejado
         setProductName('');
         setProductDate('');
         setProductStatus('');
