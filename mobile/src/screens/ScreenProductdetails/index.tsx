@@ -20,7 +20,7 @@ export function Productdetails() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Detalhes do Produto:</Text>
+      <Text style={styles.title}>Todos os Produtos:</Text>
       <View style={styles.card}></View>
       <TouchableOpacity style={styles.button} onPress={(openScreen)}>
         <Text style={styles.buttonText}>Atualizar</Text>
