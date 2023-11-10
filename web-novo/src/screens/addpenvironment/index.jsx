@@ -10,7 +10,13 @@ export function Addenvironment() {
 
   const handleAddEnvironment = async () => {
     try {
-      const response = await fetch('http://localhost:5173/environment', {
+      // console.log para verificar se os dados estão corretos antes da solicitação
+      console.log('Dados do Ambiente a serem enviados:', {
+        nome_salas: environmentName,
+        quant_salas: 0,
+      });
+
+      const response = await fetch('http://localhost:5173/environments', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -20,6 +26,9 @@ export function Addenvironment() {
           quant_salas: 0,
         }),
       });
+
+      // console.log para verificar a resposta do servidor
+      console.log('Resposta do servidor:', response);
 
       if (response.ok) {
         setSuccessMessage('Ambiente adicionado com sucesso!');
@@ -31,6 +40,7 @@ export function Addenvironment() {
         setSuccessMessage('');
       }
     } catch (error) {
+      // console.log para verificar se há algum erro no bloco catch
       console.error('Erro ao adicionar ambiente:', error);
       setErrorMessage('Erro ao adicionar ambiente. Por favor, tente novamente mais tarde.');
       setSuccessMessage('');

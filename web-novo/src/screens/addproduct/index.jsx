@@ -15,7 +15,7 @@ export function Add() {
   useEffect(() => {
     const fetchAmbientes = async () => {
       try {
-        const response = await fetch('http://localhost:5173/ambientes');
+        const response = await fetch('http://localhost:5173/environments');
         const data = await response.json();
         setAmbientes(data);
       } catch (error) {
@@ -28,7 +28,16 @@ export function Add() {
 
   const handleAddProduct = async () => {
     try {
-      const response = await fetch('http://localhost:5173/products', {
+      // console.log para verificar se os dados estão corretos antes da solicitação
+      console.log('Dados do Produto a serem enviados:', {
+        nome_produto: productName,
+        dat_cadastro: productDate,
+        status_produto: productStatus,
+        cod_produto: null,
+        ambiente_id: selectedAmbiente,
+      });
+
+      const response = await fetch('http://localhost:5173/product', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -37,17 +46,19 @@ export function Add() {
           nome_produto: productName,
           dat_cadastro: productDate,
           status_produto: productStatus,
-          cod_produto: null, // O código do produto é gerado automaticamente pelo banco de dados
+          cod_produto: null,
           ambiente_id: selectedAmbiente,
         }),
       });
+
+      // console.log para verificar a resposta do servidor
+      console.log('Resposta do servidor:', response);
 
       if (response.ok) {
         const data = await response.json();
         setSuccessMessage('Produto adicionado com sucesso!');
         setErrorMessage('');
         console.log('Produto adicionado com sucesso:', data);
-        // Limpar os campos após adicionar o produto, se desejado
         setProductName('');
         setProductDate('');
         setProductStatus('');
@@ -58,6 +69,7 @@ export function Add() {
         setSuccessMessage('');
       }
     } catch (error) {
+      // console.log para verificar se há algum erro no bloco catch
       console.error('Erro ao adicionar produto:', error);
       setErrorMessage('Erro ao adicionar produto. Por favor, tente novamente mais tarde.');
       setSuccessMessage('');
