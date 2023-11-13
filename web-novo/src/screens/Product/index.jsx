@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './styles.css';
 import { SideBar } from '../../components/sideBar';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
+import axios from 'axios';
 
 export function Product() {
   const [query, setQuery] = useState('');
@@ -11,8 +12,8 @@ export function Product() {
 
   const handleSearch = async () => {
     try {
-      const response = await fetch(`http://localhost:5173/product`);
-      const data = await response.json();
+      const response = await axios.get(`http://localhost:8090/produtos`);
+      const data = response.data;
 
       console.log('Resposta do servidor ao buscar produtos:', data);
 

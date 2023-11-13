@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './styles.css';
 import { SideBar } from '../../components/sideBar';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
+import axios from 'axios';
 
 export function Add() {
   const [productName, setProductName] = useState('');
@@ -15,9 +16,8 @@ export function Add() {
   useEffect(() => {
     const fetchAmbientes = async () => {
       try {
-        const response = await fetch('http://localhost:5173/environments');
-        const data = await response.json();
-        setAmbientes(data);
+        const response = await axios.get('http://localhost:8090/salas');
+        setAmbientes(response.data);
       } catch (error) {
         console.error('Erro ao carregar ambientes:', error);
       }
@@ -28,7 +28,6 @@ export function Add() {
 
   const handleAddProduct = async () => {
     try {
-      // console.log para verificar se os dados estão corretos antes da solicitação
       console.log('Dados do Produto a serem enviados:', {
         nome_produto: productName,
         dat_cadastro: productDate,
@@ -37,39 +36,29 @@ export function Add() {
         ambiente_id: selectedAmbiente,
       });
 
-      const response = await fetch('http://localhost:5173/product', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          nome_produto: productName,
-          dat_cadastro: productDate,
-          status_produto: productStatus,
-          cod_produto: null,
-          ambiente_id: selectedAmbiente,
-        }),
+      const response = await axios.post('http://localhost:8090/produtos', {
+        nome_produto: productName,
+        dat_cadastro: productDate,
+        status_produto: productStatus,
+        cod_produto: null,
+        ambiente_id: selectedAmbiente,
       });
 
-      // console.log para verificar a resposta do servidor
       console.log('Resposta do servidor:', response);
 
-      if (response.ok) {
-        const data = await response.json();
+      if (response.status === 200) {
         setSuccessMessage('Produto adicionado com sucesso!');
         setErrorMessage('');
-        console.log('Produto adicionado com sucesso:', data);
+        console.log('Produto adicionado com sucesso:', response.data);
         setProductName('');
         setProductDate('');
         setProductStatus('');
         setSelectedAmbiente('');
       } else {
-        const errorData = await response.json();
-        setErrorMessage(`Erro ao adicionar produto: ${errorData.message}`);
+        setErrorMessage(`Erro ao adicionar produto: ${response.data.message}`);
         setSuccessMessage('');
       }
     } catch (error) {
-      // console.log para verificar se há algum erro no bloco catch
       console.error('Erro ao adicionar produto:', error);
       setErrorMessage('Erro ao adicionar produto. Por favor, tente novamente mais tarde.');
       setProductName('');
@@ -130,14 +119,11 @@ export function Add() {
                 <span>Adicionar</span>
               </div>
             </div>
-
-
           </div>
           <div className='Mensagens'>{
             successMessage && <p className="success-message">{successMessage}</p>}
             {errorMessage && <p className="error-message">{errorMessage}</p>}
           </div>
-
         </div>
       </div>
     </>

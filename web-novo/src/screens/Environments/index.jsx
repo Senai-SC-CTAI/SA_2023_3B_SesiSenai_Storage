@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './styles.css';
 import { SideBar } from '../../components/sideBar';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
+import axios from 'axios';
 
 export function Environments() {
   const [query, setQuery] = useState('');
@@ -11,8 +12,8 @@ export function Environments() {
 
   const handleSearch = async () => {
     try {
-      const response = await fetch(`http://localhost:5173/environments`);
-      const data = await response.json();
+      const response = await axios.get(`http://localhost:8090/salas`);
+      const data = response.data;
 
       console.log('Resposta do servidor ao buscar ambientes:', data);
 
@@ -61,7 +62,7 @@ export function Environments() {
           {searchError && <p className="error-message">{searchError}</p>}
 
           {noResults ? (
-            <p>Nenhum produto encontrado com o nome "{query}".</p>
+            <p>Nenhum ambiente encontrado com o nome "{query}".</p>
           ) : (
             <div className="search-results">
               <ul>

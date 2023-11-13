@@ -1,64 +1,42 @@
 import React, { useState } from 'react';
 import './styles.css';
 import { SideBar } from '../../components/sideBar';
-import axios from 'axios';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
+import axios from 'axios';
 
 export function Addenvironment() {
   const [environmentName, setEnvironmentName] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
-  // const handleAddEnvironment = async () => {
-  //   try {
-  //     console.log('Dados do Ambiente a serem enviados:', {
-  //       nome_salas: environmentName,
-  //       quant_salas: 0,
-  //     });
-
-  //     const response = await fetch('http://localhost:8090/salas', {
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //       },
-  //       body: JSON.stringify({
-  //         nome_salas: environmentName,
-  //         quant_salas: 0,
-  //       }),
-  //     });
-
-  const handleAddEnvironment = async (event) => {
-    event.preventDefault();
+  const handleAddEnvironment = async () => {
     try {
-      let newEnvironment = {
-        quant_salas : environmentName,
-        nome_salas : 0
-      }
-      await axios.post('http://localhost:8090/salas', newEnvironment);
+      console.log('Dados do Ambiente a serem enviados:', {
+        nome_salas: environmentName,
+        quant_salas: 0,
+      });
 
+      const response = await axios.post('http://localhost:8090/salas', {
+        nome_salas: environmentName,
+        quant_salas: 0,
+      });
+
+      console.log('Resposta do servidor:', response);
+
+      if (response.status === 200) {
+        setSuccessMessage('Ambiente adicionado com sucesso!');
+        setErrorMessage('');
+        setEnvironmentName('');
+      } else {
+        setErrorMessage(`Erro ao adicionar ambiente: ${response.data.message}`);
+        setSuccessMessage('');
+      }
     } catch (error) {
-      console.error('Erro ao criar sala:', error);
+      console.error('Erro ao adicionar ambiente:', error);
+      setErrorMessage('Erro ao adicionar ambiente. Por favor, tente novamente mais tarde.');
+      setSuccessMessage('');
     }
   };
-
-    //   console.log('Resposta do servidor:', response);
-
-    //   if (response.ok) {
-    //     setSuccessMessage('Ambiente adicionado com sucesso!');
-    //     setErrorMessage('');
-    //     setEnvironmentName('');
-    //   } else {
-    //     const errorData = await response.json();
-    //     setErrorMessage(`Erro ao adicionar ambiente: ${errorData.message}`);
-    //     setSuccessMessage('');
-    //   }
-    // } catch (error) {
-    //   console.error('Erro ao adicionar ambiente:', error);
-    //   setErrorMessage('Erro ao adicionar ambiente. Por favor, tente novamente mais tarde.');
-    //   setSuccessMessage('');
-    // }
-  
-
 
   return (
     <>
