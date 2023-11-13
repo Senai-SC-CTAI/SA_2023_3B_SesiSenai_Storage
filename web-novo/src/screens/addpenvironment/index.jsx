@@ -16,7 +16,7 @@ export function Addenvironment() {
         quant_salas: 0,
       });
 
-      const response = await axios.post('http://localhost:8090/salas', {
+      const response = await axios.post('http://localhost:8090/Salas', {
         nome_salas: environmentName,
         quant_salas: 0,
       });

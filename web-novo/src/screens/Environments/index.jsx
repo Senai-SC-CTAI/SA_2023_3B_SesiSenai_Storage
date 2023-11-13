@@ -12,7 +12,7 @@ export function Environments() {
 
   const handleSearch = async () => {
     try {
-      const response = await axios.get(`http://localhost:8090/salas`);
+      const response = await axios.get(`http://localhost:8090/Salas`);
       const data = response.data;
 
       console.log('Resposta do servidor ao buscar ambientes:', data);
