@@ -9,20 +9,24 @@ export function Add() {
   const [productDate, setProductDate] = useState('');
   const [productStatus, setProductStatus] = useState('');
   const [selectedAmbiente, setSelectedAmbiente] = useState('');
-  const [ambientes, setAmbientes] = useState([]);
+  //const [ambientes, setAmbientes] = useState([]);
+  let ambientes = []
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
-  useEffect(() => {
-    const fetchAmbientes = async () => {
-      try {
-        const response = await axios.get('http://localhost:8090/salas');
-        setAmbientes(response.data);
-      } catch (error) {
-        console.error('Erro ao carregar ambientes:', error);
-      }
-    };
 
+  const fetchAmbientes = async () => {
+    try {
+      const response = await axios.get('http://localhost:8090/salas');      
+      //setAmbientes(response.data);
+      ambientes = response.data;
+      console.log(ambientes);
+    } catch (error) {
+      console.error('Erro ao carregar ambientes:', error);
+    }
+  };
+
+  useEffect(() => {
     fetchAmbientes();
   }, []);
 
