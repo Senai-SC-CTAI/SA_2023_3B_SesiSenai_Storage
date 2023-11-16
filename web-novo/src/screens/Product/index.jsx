@@ -12,7 +12,7 @@ export function Product() {
 
   const handleSearch = async () => {
     try {
-      const response = await axios.get(`http://localhost:8090/Produto`);
+      const response = await axios.get(`http://localhost:8090/produto`);
       const data = response.data;
 
       console.log('Resposta do servidor ao buscar produtos:', data);

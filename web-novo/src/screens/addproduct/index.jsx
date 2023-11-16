@@ -36,7 +36,7 @@ export function Add() {
         ambiente_id: selectedAmbiente,
       });
 
-      const response = await axios.post('http://localhost:8090/Produto', {
+      const response = await axios.post('http://localhost:8090/produto', {
         nome_produto: productName,
         dat_cadastro: productDate,
         status_produto: productStatus,
