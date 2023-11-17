@@ -9,16 +9,17 @@ export function Product() {
   const [results, setResults] = useState([]);
   const [noResults, setNoResults] = useState(false);
   const [searchError, setSearchError] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
+  const [resultsPerPage] = useState(5);
 
-  const handleSearch = async () => {
+  const fetchResults = async () => {
     try {
-      const response = await axios.get(`http://localhost:8090/produto`);
+      const response = await axios.get(`http://localhost:8090/produto?nome_produto_like=${query}`);
       const data = response.data;
-
-      console.log('Resposta do servidor ao buscar produtos:', data);
 
       if (data.length === 0) {
         setNoResults(true);
+        setResults([]);
         setSearchError('');
       } else {
         setResults(data);
@@ -27,19 +28,32 @@ export function Product() {
       }
     } catch (error) {
       console.error('Erro ao buscar produtos:', error);
-      setSearchError('Erro ao buscar produtos.');
+      setSearchError('Erro ao buscar produtos. Por favor, tente novamente.');
+      setNoResults(true);
+      setResults([]);
     }
   };
 
-  const handleButtonClick = () => {
+  const handleSearch = async () => {
     if (query.trim() !== '') {
-      handleSearch();
+      await fetchResults();
+      setCurrentPage(1);
     } else {
       setSearchError('A consulta de pesquisa está vazia. Por favor, insira um termo de pesquisa.');
       setNoResults(true);
       setResults([]);
     }
   };
+
+  const handleButtonClick = () => {
+    handleSearch();
+  };
+
+  const indexOfLastResult = currentPage * resultsPerPage;
+  const indexOfFirstResult = indexOfLastResult - resultsPerPage;
+  const currentResults = results.slice(indexOfFirstResult, indexOfLastResult);
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
     <>
@@ -66,10 +80,22 @@ export function Product() {
           ) : (
             <div className="search-results">
               <ul>
-                {results.map((result, index) => (
-                  <li key={index}>{result.nome}</li>
+                {currentResults.map((result, index) => (
+                  <li key={index}>
+                    <strong>Nome:</strong> {result.nome_produto}<br />
+                    <span><strong>Status do Produto:</strong> {result.status_produto}</span><br />
+                    <span><strong>Data de Cadastro:</strong> {result.dat_cadastro}</span>
+                  </li>
                 ))}
               </ul>
+            </div>
+          )}
+
+          {results.length > resultsPerPage && (
+            <div className="pagination">
+              {Array.from({ length: Math.ceil(results.length / resultsPerPage) }, (_, i) => (
+                <button key={i} onClick={() => paginate(i + 1)}>{i + 1}</button>
+              ))}
             </div>
           )}
         </div>
