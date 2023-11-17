@@ -4,8 +4,6 @@ import com.sa.cadastrostorage.repository.SalasRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
-import org.springframework.dao.EmptyResultDataAccessException;
-import org.springframework.http.ResponseEntity;
 @CrossOrigin(origins = "http://localhost:5173") // Endereço do front
 @RestController
 
