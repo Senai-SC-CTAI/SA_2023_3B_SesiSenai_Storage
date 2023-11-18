@@ -9,17 +9,14 @@ export function Add() {
   const [productDate, setProductDate] = useState('');
   const [productStatus, setProductStatus] = useState('');
   const [selectedAmbiente, setSelectedAmbiente] = useState('');
-  //const [ambientes, setAmbientes] = useState([]);
-  let ambientes = []
+  const [ambientes, setAmbientes] = useState([]); // Update ambientes state
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
-
   const fetchAmbientes = async () => {
     try {
-      const response = await axios.get('http://localhost:8090/salas');      
-      //setAmbientes(response.data);
-      ambientes = response.data;
+      const response = await axios.get('http://localhost:8090/salas');
+      setAmbientes(response.data); // Update ambientes state
       console.log(ambientes);
     } catch (error) {
       console.error('Erro ao carregar ambientes:', error);
@@ -37,7 +34,7 @@ export function Add() {
         dat_cadastro: productDate,
         status_produto: productStatus,
         cod_produto: null,
-        ambiente_id: selectedAmbiente,
+        salas_id_salas: selectedAmbiente, // Update attribute name
       });
 
       const response = await axios.post('http://localhost:8090/produto', {
@@ -45,7 +42,7 @@ export function Add() {
         dat_cadastro: productDate,
         status_produto: productStatus,
         cod_produto: null,
-        ambiente_id: selectedAmbiente,
+        salas_id_salas: selectedAmbiente, // Update attribute name
       });
 
       console.log('Resposta do servidor:', response);
@@ -113,7 +110,7 @@ export function Add() {
               <option value="">Selecione o ambiente</option>
               {ambientes.map((ambiente) => (
                 <option key={ambiente.id} value={ambiente.id}>
-                  {ambiente.nome}
+                  {ambiente.nome_salas}
                 </option>
               ))}
             </select>
