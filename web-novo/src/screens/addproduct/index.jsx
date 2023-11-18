@@ -12,6 +12,8 @@ export function Add() {
   const [ambientes, setAmbientes] = useState([]); // Update ambientes state
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const [selectedUsuario, setSelectedUsuario] = useState('');
+
 
   const fetchAmbientes = async () => {
     try {
@@ -113,7 +115,27 @@ export function Add() {
                   {ambiente.nome_salas}
                 </option>
               ))}
+              
             </select>
+
+
+
+            <span>Usuario:</span>
+            <select
+              onChange={(e) => setSelectedAmbiente(e.target.value)}
+              value={selectedUsuario}
+              className="regInput"
+            >
+            <option value="">Selecione o Usuario</option>
+              {ambientes.map((ambiente) => (
+                <option key={ambiente.id} value={ambiente.id}>
+                  {ambiente.nome_salas}
+                </option>
+              ))}
+              </select>
+
+
+
 
             <div className="box-1">
               <div className="btn btn-one" onClick={handleAddProduct}>
