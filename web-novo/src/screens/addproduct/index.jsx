@@ -9,22 +9,36 @@ export function Add() {
   const [productDate, setProductDate] = useState('');
   const [productStatus, setProductStatus] = useState('');
   const [selectedAmbiente, setSelectedAmbiente] = useState('');
-  const [ambientes, setAmbientes] = useState([]); // Update ambientes state
+  const [ambientes, setAmbientes] = useState([]);
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+
+  const [users, setUsers] = useState([]); // New state for users
+  const [selectedUser, setSelectedUser] = useState('');
 
   const fetchAmbientes = async () => {
     try {
       const response = await axios.get('http://localhost:8090/salas');
-      setAmbientes(response.data); // Update ambientes state
+      setAmbientes(response.data);
       console.log(ambientes);
     } catch (error) {
       console.error('Erro ao carregar ambientes:', error);
     }
   };
 
+  const fetchUsers = async () => {
+    try {
+      const response = await axios.get('http://localhost:8090/Users');
+      setUsers(response.data);
+      console.log(users);
+    } catch (error) {
+      console.error('Erro ao carregar usuários:', error);
+    }
+  };
+
   useEffect(() => {
     fetchAmbientes();
+    fetchUsers();
   }, []);
 
   const handleAddProduct = async () => {
@@ -34,7 +48,8 @@ export function Add() {
         dat_cadastro: productDate,
         status_produto: productStatus,
         cod_produto: null,
-        salas_id_salas: selectedAmbiente, // Update attribute name
+        salas_id_salas: selectedAmbiente,
+        users_id_users: selectedUser, // New attribute for user
       });
 
       const response = await axios.post('http://localhost:8090/produto', {
@@ -42,7 +57,8 @@ export function Add() {
         dat_cadastro: productDate,
         status_produto: productStatus,
         cod_produto: null,
-        salas_id_salas: selectedAmbiente, // Update attribute name
+        salas_id_salas: selectedAmbiente,
+        users_id_users: selectedUser, // New attribute for user
       });
 
       console.log('Resposta do servidor:', response);
@@ -55,6 +71,7 @@ export function Add() {
         setProductDate('');
         setProductStatus('');
         setSelectedAmbiente('');
+        setSelectedUser(''); // Clear selected user after successful submission
       } else {
         setErrorMessage(`Erro ao adicionar produto: ${response.data.message}`);
         setSuccessMessage('');
@@ -66,6 +83,7 @@ export function Add() {
       setProductDate('');
       setProductStatus('');
       setSelectedAmbiente('');
+      setSelectedUser('');
       setSuccessMessage('');
     }
   };
@@ -111,6 +129,21 @@ export function Add() {
               {ambientes.map((ambiente) => (
                 <option key={ambiente.id} value={ambiente.id}>
                   {ambiente.nome_salas}
+                </option>
+              ))}
+            </select>
+
+            {/* New Select User dropdown */}
+            <span>Usuário:</span>
+            <select
+              onChange={(e) => setSelectedUser(e.target.value)}
+              value={selectedUser}
+              className="regInput"
+            >
+              <option value="">Selecione o usuário</option>
+              {users.map((user) => (
+                <option key={user.id} value={user.id}>
+                  {user.nome_users}
                 </option>
               ))}
             </select>
