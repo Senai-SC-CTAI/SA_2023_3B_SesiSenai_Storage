@@ -55,8 +55,8 @@ export function Environments() {
         setResults([]);
       }
     } catch (error) {
-      console.error('Erro ao buscar ambientes por query:', error);
-      setSearchError('Erro ao buscar ambientes por query.');
+      console.error('Erro ao buscar ambientes:', error);
+      setSearchError('Erro ao buscar ambientes.');
     }
   };
 
@@ -77,7 +77,10 @@ export function Environments() {
             onChangeText={(text) => setQuery(text)}
             style={{ width: '90%', fontStyle: 'italic', color: 'grey' }}
           />
-          <TouchableOpacity style={{ width: 25, height: 25, resizeMode: 'contain', marginLeft: 10 }} onPress={handleButtonClick}>
+          <TouchableOpacity
+            style={{ width: 25, height: 25, resizeMode: 'contain', marginLeft: 10 }}
+            onPress={handleButtonClick}
+          >
             <Image source={require('../../../assets/search.svg')} style={{ width: '100%', height: '100%' }} />
           </TouchableOpacity>
         </View>
