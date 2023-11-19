@@ -12,15 +12,10 @@ public class Produto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long cod_produto;
-    private Long dat_cadastro;
     private String nome_produto;
     private String status_produto;
-    
-    @ManyToOne
-    private Users users;
-    
-    @ManyToOne
-    private Salas salas;
+    private Long salas_id_salas;
+    private Long users_id_users;
 
 
 }

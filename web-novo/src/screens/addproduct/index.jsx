@@ -6,7 +6,6 @@ import axios from 'axios';
 
 export function Add() {
   const [productName, setProductName] = useState('');
-  const [productDate, setProductDate] = useState('');
   const [productStatus, setProductStatus] = useState('');
   const [selectedAmbiente, setSelectedAmbiente] = useState('');
   const [ambientes, setAmbientes] = useState([]);
@@ -28,7 +27,7 @@ export function Add() {
 
   const fetchUsers = async () => {
     try {
-      const response = await axios.get('http://localhost:8090/Users');
+      const response = await axios.get('http://localhost:8090/users');
       setUsers(response.data);
       console.log(users);
     } catch (error) {
@@ -45,20 +44,18 @@ export function Add() {
     try {
       console.log('Dados do Produto a serem enviados:', {
         nome_produto: productName,
-        dat_cadastro: productDate,
         status_produto: productStatus,
         cod_produto: null,
         salas_id_salas: selectedAmbiente,
-        users_id_users: selectedUser, // New attribute for user
+        users_id_users: selectedUser, 
       });
 
       const response = await axios.post('http://localhost:8090/produto', {
         nome_produto: productName,
-        dat_cadastro: productDate,
         status_produto: productStatus,
         cod_produto: null,
         salas_id_salas: selectedAmbiente,
-        users_id_users: selectedUser, // New attribute for user
+        users_id_users: selectedUser, 
       });
 
       console.log('Resposta do servidor:', response);
@@ -68,10 +65,9 @@ export function Add() {
         setErrorMessage('');
         console.log('Produto adicionado com sucesso:', response.data);
         setProductName('');
-        setProductDate('');
         setProductStatus('');
         setSelectedAmbiente('');
-        setSelectedUser(''); // Clear selected user after successful submission
+        setSelectedUser(''); 
       } else {
         setErrorMessage(`Erro ao adicionar produto: ${response.data.message}`);
         setSuccessMessage('');
@@ -80,7 +76,6 @@ export function Add() {
       console.error('Erro ao adicionar produto:', error);
       setErrorMessage('Erro ao adicionar produto. Por favor, tente novamente mais tarde.');
       setProductName('');
-      setProductDate('');
       setProductStatus('');
       setSelectedAmbiente('');
       setSelectedUser('');
@@ -103,14 +98,6 @@ export function Add() {
               value={productName}
               onChange={(e) => setProductName(e.target.value)}
             />
-            <span>Data de Cadastro:</span>
-            <input
-              type="date"
-              placeholder="Data de Cadastro"
-              className='regInput'
-              value={productDate}
-              onChange={(e) => setProductDate(e.target.value)}
-            />
             <span>Status:</span>
             <input
               type="text"
@@ -127,7 +114,7 @@ export function Add() {
             >
               <option value="">Selecione o ambiente</option>
               {ambientes.map((ambiente) => (
-                <option key={ambiente.id} value={ambiente.id}>
+                <option key={ambiente.id} value={ambiente.id_salas}>
                   {ambiente.nome_salas}
                 </option>
               ))}
@@ -140,8 +127,8 @@ export function Add() {
             >
               <option value="">Selecione o usuário</option>
               {users.map((user) => (
-                <option key={user.id} value={user.id}>
-                  {user.nome_users}
+                <option key={user.id_users} value={user.id_users}>
+                  {user.name_users}
                 </option>
               ))}
             </select>

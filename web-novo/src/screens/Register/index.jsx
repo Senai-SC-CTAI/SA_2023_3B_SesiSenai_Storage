@@ -7,11 +7,10 @@ import { Footer } from '../../components/Footer';
 
 export function Register() {
   const [formData, setFormData] = useState({
-    nome_users: '',
+    name_users: '',
     cpf_users: '',
     email_users: '',
     password_users: '',
-    id_users: null,
   });
 
   const [successMessage, setSuccessMessage] = useState('');
@@ -26,7 +25,7 @@ export function Register() {
   const handleRegister = async () => {
     try {
       if (
-        !formData.nome_users ||
+        !formData.name_users ||
         !formData.cpf_users ||
         !formData.email_users ||
         !formData.password_users
@@ -37,9 +36,12 @@ export function Register() {
         return;
       }
 
-      const { id_users, ...dataWithoutId } = formData;
+      //const { id_users, ...dataWithoutId } = formData;
 
-      const response = await axios.post('http://localhost:8090/Users', dataWithoutId);
+      console.log('Enviando dados para o servidor:', formData);
+
+      const response = await axios.post('http://localhost:8090/users', formData);
+
       console.log('Resposta do servidor:', response);
 
       if (response.status === 200) {
@@ -47,19 +49,18 @@ export function Register() {
         setErrorMessage('');
         setValidationMessage('');
         setFormData({
-          nome_users: '',
+          name_users: '',
           cpf_users: '',
           email_users: '',
-          password_users: '',
-          id_users: null,
+          password_users: ''
         });
       } else {
-        setErrorMessage(`Erro ao cadastrar usuário: ${response.data.message}`);
+        setErrorMessage(`Erro ao cadastrar usuário: ${response.data.message || 'Erro desconhecido'}`);
         setSuccessMessage('');
         setValidationMessage('');
       }
     } catch (error) {
-      console.error('Erro ao cadastrar usuário:', error);
+      console.error('Erro ao cadastrar usuário1:', error);
       setErrorMessage('Erro ao cadastrar usuário. Por favor, tente novamente mais tarde.');
       setSuccessMessage('');
       setValidationMessage('');
@@ -77,8 +78,8 @@ export function Register() {
             type="text"
             placeholder="Nome"
             className="regInput"
-            name="nome_users"
-            value={formData.nome_users}
+            name="name_users"
+            value={formData.name_users}
             onChange={handleInputChange}
           />
           <span>CPF</span>

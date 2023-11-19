@@ -8,6 +8,7 @@ import lombok.Setter;
 @Entity
 public class Users {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id_users;
     private String Name_users;
     private String Email_users;
