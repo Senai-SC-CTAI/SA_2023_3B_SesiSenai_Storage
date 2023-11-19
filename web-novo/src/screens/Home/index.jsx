@@ -11,7 +11,6 @@ export function Home() {
         <>
             <div className="mainContainer home">
                 <SideBar />
-                {/* <Menu /> */}
 
                 
                 <div className="content">

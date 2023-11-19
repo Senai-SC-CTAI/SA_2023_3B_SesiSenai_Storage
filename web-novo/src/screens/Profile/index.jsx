@@ -32,12 +32,11 @@ export function Profile() {
   };
 
   const handleSaveClick = () => {
-    // Implemente a lógica para salvar as alterações (enviar para o servidor, etc.)
-    setEditMode(false); // Desativa o modo de edição após salvar
+    setEditMode(false); 
   };
 
   const handleCancelClick = () => {
-    setEditMode(false); // Desativa o modo de edição ao cancelar
+    setEditMode(false); 
   };
 
   return (

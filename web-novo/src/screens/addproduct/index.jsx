@@ -132,8 +132,6 @@ export function Add() {
                 </option>
               ))}
             </select>
-
-            {/* New Select User dropdown */}
             <span>Usuário:</span>
             <select
               onChange={(e) => setSelectedUser(e.target.value)}

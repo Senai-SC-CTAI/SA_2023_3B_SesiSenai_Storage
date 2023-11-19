@@ -25,7 +25,6 @@ export function Register() {
 
   const handleRegister = async () => {
     try {
-      // Validar se todos os campos estão preenchidos
       if (
         !formData.nome_users ||
         !formData.cpf_users ||
