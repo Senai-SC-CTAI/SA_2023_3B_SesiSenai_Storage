@@ -61,3 +61,51 @@
     justify-content: center;
     margin-left: 25%;
 }
+
+/* Divisoria entre o código do flores e as tabelas geradas pela pesquisa */
+
+
+.search-results {
+    margin-top: 20px;
+  }
+  
+  .search-results ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .search-results li {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #e6f7ff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .search-results li strong {
+    font-weight: bold;
+  }
+  
+  .search-results li span {
+    display: block;
+    margin-top: 10px;
+  }
+  
+  .pagination {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .pagination button {
+    padding: 10px;
+    background-color: #84a7f3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .pagination button:hover {
+    background-color: #5d86c5;
+  }
