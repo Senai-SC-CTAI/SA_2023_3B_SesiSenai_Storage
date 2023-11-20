@@ -12,7 +12,7 @@ export function Add() {
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
-  const [users, setUsers] = useState([]); // New state for users
+  const [users, setUsers] = useState([]);
   const [selectedUser, setSelectedUser] = useState('');
 
   const fetchAmbientes = async () => {
