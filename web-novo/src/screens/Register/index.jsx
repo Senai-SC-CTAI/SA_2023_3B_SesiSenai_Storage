@@ -121,7 +121,9 @@ export function Register() {
 
             <div className="box-1" onClick={handleRegister}>
               <div className="btn btn-one">
+                <div className='central' >
                 <span>Confirmar</span>
+                </div>
               </div>
             </div>
           </div>
