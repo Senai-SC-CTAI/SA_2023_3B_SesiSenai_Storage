@@ -127,10 +127,10 @@ export function Register() {
             </div>
           </div>
 
-          <div className='Mensagens'>
-            {validationMessage && <p className="error-message">{validationMessage}</p>}
-            {successMessage && <p className="success-message">{successMessage}</p>}
-            {errorMessage && <p className="error-message">{errorMessage}</p>}
+          <div className='Mensagens2'>
+            {validationMessage && <p className="error-message2">{validationMessage}</p>}
+            {successMessage && <p className="success-message2">{successMessage}</p>}
+            {errorMessage && <p className="error-message2">{errorMessage}</p>}
           </div>
         </div>
         <br />
