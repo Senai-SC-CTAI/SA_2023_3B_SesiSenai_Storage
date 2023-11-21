@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './styles.css';
 import Logo from '../../assets/Group 10.png';
@@ -6,12 +6,18 @@ import { NavLink } from 'react-router-dom';
 import { Footer } from '../../components/Footer';
 
 export function Register() {
+
+  const [users, setUsers] = useState([]);
+
   const [formData, setFormData] = useState({
     name_users: '',
     cpf_users: '',
     email_users: '',
     password_users: '',
   });
+  useEffect(() => {
+    fetchUsers();
+  }, []);
 
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
@@ -22,6 +28,16 @@ export function Register() {
     setFormData({ ...formData, [name]: value });
   };
 
+  const fetchUsers = async () => {
+    try {
+      const response = await axios.get("http://localhost:8090/users");
+      setUsers(response.data);
+
+    } catch (error) {
+      console.log("error", error);
+    }
+  };
+
   const handleRegister = async () => {
     try {
       if (
@@ -29,38 +45,35 @@ export function Register() {
         !formData.cpf_users ||
         !formData.email_users ||
         !formData.password_users
-      ) {
+      ){
         setValidationMessage('Por favor, preencha todos os campos.');
         setSuccessMessage('');
         setErrorMessage('');
         return;
-      }
-
-      //const { id_users, ...dataWithoutId } = formData;
-
-      console.log('Enviando dados para o servidor:', formData);
-
-      const response = await axios.post('http://localhost:8090/users', formData);
-
-      console.log('Resposta do servidor:', response);
-
-      if (response.status === 200) {
+      } 
+        //const { id_users, ...dataWithoutId } = formData;
+        //console.log('Enviando dados para o servidor:', formData);
+        let newUser = {
+          name_user: formData.name_users,
+          email_user: formData.email_users,
+          password_user: formData.password_users,
+          cpf_user: formData.cpf_users,
+        };
+        await axios.post('http://localhost:8090/users', newUser);
+        fetchUsers();
+        //console.log('Resposta do servidor:', response);    
         setSuccessMessage('Cadastro realizado com sucesso!');
         setErrorMessage('');
         setValidationMessage('');
+        console.log(users);
         setFormData({
           name_users: '',
           cpf_users: '',
           email_users: '',
           password_users: ''
-        });
-      } else {
-        setErrorMessage(`Erro ao cadastrar usuário: ${response.data.message || 'Erro desconhecido'}`);
-        setSuccessMessage('');
-        setValidationMessage('');
-      }
+      })
     } catch (error) {
-      console.error('Erro ao cadastrar usuário1:', error);
+      console.error('Erro ao cadastrar usuário:', error);
       setErrorMessage('Erro ao cadastrar usuário. Por favor, tente novamente mais tarde.');
       setSuccessMessage('');
       setValidationMessage('');
@@ -82,6 +95,7 @@ export function Register() {
             value={formData.name_users}
             onChange={handleInputChange}
           />
+
           <span>CPF</span>
           <input
             type="text"

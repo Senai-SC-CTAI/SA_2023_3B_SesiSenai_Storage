@@ -8,7 +8,7 @@ import java.util.List;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.ResponseEntity;
 
-@CrossOrigin(origins = "http://localhost:5173") // Endereço do front
+@CrossOrigin(origins = "http://localhost:5174") // Endereço do front
 @RestController
 @RequestMapping("/users")
 public class UsersController {
@@ -40,11 +40,11 @@ public class UsersController {
 public ResponseEntity<Users> atualizarUsers(@PathVariable Long Id_users, @RequestBody Users usersAtualizado) {
     if (usersRepository.existsById(Id_users)) {
         Users user = usersRepository.findById(Id_users).get();
-        user.setId_users(usersAtualizado.getId_users()); // Corrigido para setId_users
-        user.setPassword_users(usersAtualizado.getPassword_users()); // Corrigido para setPassword_users
-        user.setName_users(usersAtualizado.getName_users()); // Corrigido para setName_users
-        user.setEmail_users(usersAtualizado.getEmail_users()); // Corrigido para setEmail_users
-        user.setCpf_users(usersAtualizado.getCpf_users()); // Corrigido para setCpf_users
+        user.setId_user(usersAtualizado.getId_user()); // Corrigido para setId_users
+        user.setPassword_user(usersAtualizado.getPassword_user()); // Corrigido para setPassword_users
+        user.setName_user(usersAtualizado.getName_user()); // Corrigido para setName_users
+        user.setEmail_user(usersAtualizado.getEmail_user()); // Corrigido para setEmail_users
+        user.setCpf_user(usersAtualizado.getCpf_user()); // Corrigido para setCpf_users
 
         Users usersAtualizadoBD = usersRepository.save(user);
         return ResponseEntity.ok(usersAtualizadoBD);

@@ -47,7 +47,7 @@ export function Add() {
         status_produto: productStatus,
         cod_produto: null,
         salas_id_salas: selectedAmbiente,
-        users_id_users: selectedUser, 
+        users_id_user: selectedUser, 
       });
 
       const response = await axios.post('http://localhost:8090/produto', {
@@ -55,7 +55,7 @@ export function Add() {
         status_produto: productStatus,
         cod_produto: null,
         salas_id_salas: selectedAmbiente,
-        users_id_users: selectedUser, 
+        users_id_user: selectedUser, 
       });
 
       console.log('Resposta do servidor:', response);
@@ -128,7 +128,7 @@ export function Add() {
               <option value="">Selecione o usuário</option>
               {users.map((user) => (
                 <option key={user.id_users} value={user.id_users}>
-                  {user.name_users}
+                  {user.name_user}
                 </option>
               ))}
             </select>

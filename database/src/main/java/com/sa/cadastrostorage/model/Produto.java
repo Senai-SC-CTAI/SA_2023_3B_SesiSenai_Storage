@@ -16,6 +16,4 @@ public class Produto {
     private String status_produto;
     private Long salas_id_salas;
     private Long users_id_users;
-
-
 }

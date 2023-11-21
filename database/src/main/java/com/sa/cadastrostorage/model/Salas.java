@@ -12,5 +12,4 @@ public class Salas {
     private Long id_salas; 
     private String quant_salas;
     private String nome_salas;
-    
 }
