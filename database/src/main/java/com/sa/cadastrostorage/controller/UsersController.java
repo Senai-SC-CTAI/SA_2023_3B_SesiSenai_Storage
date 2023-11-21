@@ -8,7 +8,7 @@ import java.util.List;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.ResponseEntity;
 
-@CrossOrigin(origins = "http://localhost:5174") // Endereço do front
+@CrossOrigin(origins = "http://localhost:5173") // Endereço do front
 @RestController
 @RequestMapping("/users")
 public class UsersController {

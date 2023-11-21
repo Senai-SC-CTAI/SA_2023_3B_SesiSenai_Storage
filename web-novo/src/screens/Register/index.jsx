@@ -15,9 +15,6 @@ export function Register() {
     email_users: '',
     password_users: '',
   });
-  useEffect(() => {
-    fetchUsers();
-  }, []);
 
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
@@ -26,16 +23,6 @@ export function Register() {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-  };
-
-  const fetchUsers = async () => {
-    try {
-      const response = await axios.get("http://localhost:8090/users");
-      setUsers(response.data);
-
-    } catch (error) {
-      console.log("error", error);
-    }
   };
 
   const handleRegister = async () => {
@@ -51,17 +38,15 @@ export function Register() {
         setErrorMessage('');
         return;
       } 
-        //const { id_users, ...dataWithoutId } = formData;
-        //console.log('Enviando dados para o servidor:', formData);
+        const { id_users, ...dataWithoutId } = formData;
+        console.log('Enviando dados para o servidor:', formData);
         let newUser = {
           name_user: formData.name_users,
           email_user: formData.email_users,
           password_user: formData.password_users,
           cpf_user: formData.cpf_users,
         };
-        await axios.post('http://localhost:8090/users', newUser);
-        fetchUsers();
-        //console.log('Resposta do servidor:', response);    
+        await axios.post('http://localhost:8090/users', newUser);   
         setSuccessMessage('Cadastro realizado com sucesso!');
         setErrorMessage('');
         setValidationMessage('');
