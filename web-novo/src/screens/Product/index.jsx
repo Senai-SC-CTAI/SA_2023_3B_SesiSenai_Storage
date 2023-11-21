@@ -84,7 +84,6 @@ export function Product() {
                   <li key={index}>
                     <strong>Nome:</strong> {result.nome_produto}<br />
                     <span><strong>Status do Produto:</strong> {result.status_produto}</span><br />
-                    <span><strong>Data de Cadastro:</strong> {result.dat_cadastro}</span>
                   </li>
                 ))}
               </ul>
