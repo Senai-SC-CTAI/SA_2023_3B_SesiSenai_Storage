@@ -19,7 +19,6 @@ export function Add() {
     try {
       const response = await axios.get('http://localhost:8090/salas');
       setAmbientes(response.data);
-      console.log(ambientes);
     } catch (error) {
       console.error('Erro ao carregar ambientes:', error);
     }
@@ -29,7 +28,6 @@ export function Add() {
     try {
       const response = await axios.get('http://localhost:8090/users');
       setUsers(response.data);
-      console.log(users);
     } catch (error) {
       console.error('Erro ao carregar usuários:', error);
     }
@@ -42,21 +40,20 @@ export function Add() {
 
   const handleAddProduct = async () => {
     try {
-      console.log('Dados do Produto a serem enviados:', {
-        nome_produto: productName,
-        status_produto: productStatus,
-        cod_produto: null,
-        salas_id_salas: selectedAmbiente,
-        users_id_user: selectedUser, 
-      });
+      const currentDate = new Date().getTime(); 
 
-      const response = await axios.post('http://localhost:8090/produto', {
+      const requestData = {
         nome_produto: productName,
         status_produto: productStatus,
         cod_produto: null,
-        salas_id_salas: selectedAmbiente,
-        users_id_user: selectedUser, 
-      });
+        id_salas: selectedAmbiente,
+        id_user: selectedUser,
+        dat_cadastro: currentDate, 
+      };
+
+      console.log('Dados do Produto a serem enviados:', requestData);
+
+      const response = await axios.post('http://localhost:8090/produto', requestData);
 
       console.log('Resposta do servidor:', response);
 
@@ -67,7 +64,7 @@ export function Add() {
         setProductName('');
         setProductStatus('');
         setSelectedAmbiente('');
-        setSelectedUser(''); 
+        setSelectedUser('');
       } else {
         setErrorMessage(`Erro ao adicionar produto: ${response.data.message}`);
         setSuccessMessage('');

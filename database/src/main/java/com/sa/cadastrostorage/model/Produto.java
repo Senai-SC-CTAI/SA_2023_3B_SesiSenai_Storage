@@ -14,6 +14,7 @@ public class Produto {
     private Long cod_produto;
     private String nome_produto;
     private String status_produto;
-    private Long salas_id_salas;
-    private Long users_id_users;
+    private  Long  dat_cadastro ;
+    private Long id_salas;
+    private Long id_users;
 }
