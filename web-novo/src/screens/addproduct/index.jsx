@@ -40,15 +40,11 @@ export function Add() {
 
   const handleAddProduct = async () => {
     try {
-      const currentDate = new Date().getTime(); 
-
       const requestData = {
         nome_produto: productName,
         status_produto: productStatus,
-        cod_produto: null,
         id_salas: selectedAmbiente,
         id_user: selectedUser,
-        dat_cadastro: currentDate, 
       };
 
       console.log('Dados do Produto a serem enviados:', requestData);
